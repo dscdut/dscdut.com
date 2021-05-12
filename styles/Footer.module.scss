@@ -1,0 +1,124 @@
+.single {
+	height: auto;
+	width: 99vw;
+	margin: 0 auto;
+	display: block;
+	padding: 30px 16vw;
+	box-shadow: 3px 6px 20px rgba(0,0,0,0.15);
+	border-radius: 15px 15px 0px 0px;
+}
+.contact {
+	display: block;
+	margin: 20px 0px;
+}
+.details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.icon {
+	font-size: 18px;
+	margin: 0px 3px;
+}
+.info {
+	width: 30%;
+	display: flex;
+	text-align: center;
+	p {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+.question {
+	height: auto;
+	width: 100%;
+	padding: 24px;
+	margin: 20px 0px;
+	border-radius: 15px;
+	box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+}
+.form {
+	width: 100%;
+	height: auto;
+	padding: 30px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.question_title {
+	margin: 0;
+}
+.question_elem {
+	width: 37%;
+	margin: 10px 10px;
+	height: 50px;
+	border: none;
+	box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+	border-radius: 15px;
+	&:nth-child(3) {
+		border-radius: 25px;
+	}
+	div {
+		&:nth-child(1) {
+			width: 100% !important;
+		}
+	}
+}
+.logo_container {
+	text-align: center;
+	margin: 40px 0px 0px;
+}
+@media only screen and (max-width: 768px) {
+	.single {
+		padding: 30px 10px;
+	}
+	.contact {
+		display: block;
+		margin: 20px 0px;
+		text-align: center;
+	}
+	.details {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.info {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.question {
+		height: auto;
+		width: 90%;
+		padding: 20px;
+		margin: 20px auto;
+		border-radius: 15px;
+		text-align: center;
+		box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+	}
+	.form {
+		width: 100%;
+		height: auto;
+		padding: 30px 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.question_elem {
+		width: 90%;
+		margin: 10px 10px;
+		height: 50px;
+		border: none;
+		box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+		border-radius: 15px;
+		div {
+			margin: 0px;
+			&:nth-child(1) {
+				height: 100% !important;
+			}
+		}
+	}
+}
