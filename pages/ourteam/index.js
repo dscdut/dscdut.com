@@ -8,11 +8,12 @@ import {Footer} from '../../components/Footer';
 import styles from '../../styles/OurTeam.module.scss';
 import { Card } from 'antd';
 import { motion } from 'framer-motion';
+import { BASE_URL } from '../../constants/url';
 
 const { Meta } = Card;
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://606f0d030c054f001765845d.mockapi.io/api/ourteam');
+  const res = await fetch(BASE_URL + '/ourteam');
   const data = await res.json();
 
   return {

@@ -7,9 +7,10 @@ import { NavGroup } from '../../components/NavGroup';
 import { SearchBar } from '../../components/SearchBar';
 import { Title } from '../../components/Title';
 import styles from '../../styles/MemberDetails.module.scss';
+import { BASE_URL } from '../../constants/url';
 
 export const getStaticPaths = async () => {
-     const res = await fetch('https://606f0d030c054f001765845d.mockapi.io/api/members');
+     const res = await fetch(BASE_URL + '/members');
      const data = await res.json();
    
      const paths = data.map(member => {
@@ -26,7 +27,7 @@ export const getStaticPaths = async () => {
    
    export const getStaticProps = async (context) => {
      const id = context.params.id;
-     const res = await fetch('https://606f0d030c054f001765845d.mockapi.io/api/members/' + id);
+     const res = await fetch(BASE_URL + 'members/' + id);
      const data = await res.json();
    
      return {
@@ -82,5 +83,5 @@ export const getStaticPaths = async () => {
 
      );
 }
- 
+
 export default MemberDetails;

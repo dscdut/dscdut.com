@@ -5,9 +5,10 @@ import { Title } from '../../components/Title';
 import { Thumbnail } from '../../components/Thumbnail';
 import styles from '../../styles/Members.module.scss';
 import { motion } from 'framer-motion';
+import { BASE_URL } from '../../constants/url';
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://606f0d030c054f001765845d.mockapi.io/api/members');
+  const res = await fetch(BASE_URL + '/members');
   const data = await res.json();
 
   return {

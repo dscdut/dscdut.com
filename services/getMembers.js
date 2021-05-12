@@ -1,6 +1,7 @@
+import { BASE_URL } from '../constants/url';
 
 export default async function getMembers() {
-     const res = await fetch('https://606f0d030c054f001765845d.mockapi.io/api/members');
+     const res = await fetch(BASE_URL + '/members');
      const data = await res.json();
      
      const members = data.map(member => {
