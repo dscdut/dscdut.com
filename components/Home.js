@@ -30,7 +30,7 @@ export const Home = ({ toggleNav }) => {
                <div className={styles.content}>
                     <Title toggleNav={toggleNavigation}/>
                     <div className={styles.img_container}>
-                         <Image 
+                         <Image
                          alt='cover'
                          src='/images/cover.jpg'
                          width={600}

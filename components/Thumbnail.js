@@ -56,7 +56,7 @@ export const Thumbnail = ( {members} ) => {
                          </Link>
                     </div>
                     <div className={styles.avatar}>
-                         <Image className={styles.img} src={ member.avatar } alt={ member.name }  width={400} height={600} />
+                         <Image placeholder="blur" className={styles.img} src={ member.avatar } alt={ member.name }  width={400} height={600} />
                     </div>
 			</SplideSlide>
 	));

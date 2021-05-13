@@ -85,7 +85,7 @@
 		gap: 30px;
 		padding-bottom: 30px;
 	}
-}
+}	
 
 @media only screen and (max-width: 600px) {
 	.title{
@@ -96,5 +96,11 @@
 	.biography{
 		width: 100%;
 		margin: 10px;
+	}
+	.btn_group {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 }

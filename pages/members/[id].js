@@ -8,10 +8,11 @@ import { SearchBar } from '../../components/SearchBar';
 import { Title } from '../../components/Title';
 import styles from '../../styles/MemberDetails.module.scss';
 import { BASE_URL } from '../../constants/url';
+import { data } from '../../services/mockApi/db';
 
 export const getStaticPaths = async () => {
-     const res = await fetch(BASE_URL + '/members');
-     const data = await res.json();
+    //  const res = await fetch(BASE_URL + '/members');
+    //  const data = await res.json();
    
      const paths = data.map(member => {
        return {
@@ -26,12 +27,13 @@ export const getStaticPaths = async () => {
    }
    
    export const getStaticProps = async (context) => {
-     const id = context.params.id;
-     const res = await fetch(BASE_URL + 'members/' + id);
-     const data = await res.json();
+    const id = context.params.id;
+    //  const res = await fetch(BASE_URL + 'members/' + id);
+    //  const data = await res.json();
+    const myData = data[id-1]
    
      return {
-       props: { member: data }
+       props: { member: myData }
      }
    }
 
