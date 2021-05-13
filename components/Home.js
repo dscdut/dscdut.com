@@ -40,7 +40,7 @@ export const Home = ({ toggleNav }) => {
                          />
                     </div>
                     <CarouselInfo />
-                    <Link href='/members'>
+                    <Link href='/ourteam'>
                          <a className={styles.btn}><ButtonMore content="Find out more" type="primary"/></a>
                     </Link>
                </div>

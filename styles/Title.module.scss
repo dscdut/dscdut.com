@@ -3,6 +3,7 @@
 	height: 75px;
 	width: 100%;
 	margin-bottom: 50px;
+	z-index: 5;
 }
 .circle {
 	background-color: white;
@@ -115,5 +116,18 @@
 		text-align: left;
 		margin: 0;
 		letter-spacing: 1px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.club_name_local{
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	.club_name_global{
+		font-size: 17px;
+	}
+	.club_name_local{
+		font-size: 8px;
 	}
 }

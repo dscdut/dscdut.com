@@ -17,8 +17,7 @@ function MyApp({ Component, pageProps, router }) {
             opacity: 0
           },
           pageAnimate: {
-            opacity: 1,
-            delay  : 1
+            opacity: 1
           },
           pageExit: {
             backgroundColor: 'white',

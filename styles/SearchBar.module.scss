@@ -1,4 +1,4 @@
-@keyframes "increase-height" {
+@keyframes increase-height {
 	0% {
 		height: 0px;
 	}
@@ -63,6 +63,8 @@
 }
 @media only screen and (max-width: 600px) {
 	.single {
-		display: none;
+		width: 100%;
+		padding: 7px 27px;
+		margin-bottom: 10px;
 	}
 }

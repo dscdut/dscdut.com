@@ -12,6 +12,7 @@ export const NavGroup = ({ isNavShowing }) => {
                          color={item.color}
                          icon={item.icon}
                          tooltip={item.tooltip} 
+                         link={item.link}
                     />
                })}
           </div>

@@ -15,10 +15,7 @@
 	justify-content: space-around;
 	flex-direction: row;
 	padding: 0px 150px;
-	position: absolute;
-	top: 52%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+	margin-top: 20px;
 }
 .img {
 	width: 30%;
@@ -51,20 +48,12 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
-@media only screen and (max-width: 768px) {
-	.title {
-		padding: 0px;
-		display: block;
-		margin: 0px;
-	}
+@media only screen and (max-width: 1024px) {
+	
 	.info {
 		display: block;
 		padding: 0px 20px;
 		text-align: center;
-		position: relative;
-		top: 0%;
-		-ms-transform: translateY(0%);
-		transform: translateY(0%);
 	}
 	.img {
 		padding: 20px;
@@ -87,11 +76,25 @@
 	}
 	.biography {
 		height: 280px;
+		width: 80%;
+		margin: 50px 10%;
 		text-align: left;
 	}
 	.btn_group {
-		width: 100%;
+		justify-content: center;
+		gap: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.title{
+		padding: 0px;
 		display: block;
-		padding-bottom: 50px;
+		margin: 0px;
+	}
+	.biography{
+		width: 100%;
+		margin: 10px;
 	}
 }
