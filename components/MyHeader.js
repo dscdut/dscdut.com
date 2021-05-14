@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../styles/Title.module.scss'
+import styles from '../styles/MyHeader.module.scss'
 import Image from 'next/image'
 
-export const Title = ( { toggleNav }) => {
+export const MyHeader = ( { toggleNav }) => {
      
      const toggleNavigation = () => {
           toggleNav();

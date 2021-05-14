@@ -1,10 +1,10 @@
 import React, { useState } from 'react'; 
 import Image from 'next/image';
-import Head from 'next/head';
-import {NavGroup} from '../../components/NavGroup';
-import {Title} from '../../components/Title';
-import {SearchBar} from '../../components/SearchBar';
-import {Footer} from '../../components/Footer';
+import { MyHead } from '../../components/MyHead';
+import { NavGroup } from '../../components/NavGroup';
+import { MyHeader } from '../../components/MyHeader';
+import { SearchBar } from '../../components/SearchBar';
+import { Footer } from '../../components/Footer';
 import styles from '../../styles/OurTeam.module.scss';
 import { Card } from 'antd';
 import { motion } from 'framer-motion';
@@ -31,14 +31,9 @@ const OurTeam = ( {team} ) => {
 
      return ( 
           <div className={styles.single}>
-            <Head>
-              <title>Our team</title>
-              <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"></link>
-              <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MyHead title='Our Team' />
             <div className={styles.title}>
-              <Title toggleNav={toggleNavigation}/>
+              <MyHeader toggleNav={toggleNavigation}/>
               <SearchBar />
             </div>
             <NavGroup isNavShowing={isNavShowing}/>

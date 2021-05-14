@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Homepage.module.scss'
-import {Home} from '../components/Home';
-import {NavGroup} from '../components/NavGroup';
+import styles from '../styles/Home.module.scss'
+import { MyHead } from '../components/MyHead';
+import { HomeMain } from '../components/HomeMain';
+import { NavGroup } from '../components/NavGroup';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export default function Homepage( {toggleNav} ) {
+export default function Home( {toggleNav} ) {
 
   const [isNavShowing, setIsNavShowing] = useState(false);
-  const [coverImage, setCoverImage] = useState('/images/cover.jpg')
 
   const toggleNavigation = () => {  
     setIsNavShowing(!isNavShowing);
@@ -32,12 +31,7 @@ export default function Homepage( {toggleNav} ) {
   return (
     <>
     <div className={styles.container}>
-      <Head>
-        <title>DSC-DUT Website</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"></link>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <MyHead title='DSC-DUT Website' />
 
       <div className={styles.background}>
         <Splide className={styles.wrapper} options={ options }>
@@ -57,7 +51,7 @@ export default function Homepage( {toggleNav} ) {
         </Splide>
       </div>
       
-      <Home toggleNav={toggleNavigation} />
+      <HomeMain toggleNav={toggleNavigation} />
     </div>
     <NavGroup isNavShowing={isNavShowing}/>
     </>

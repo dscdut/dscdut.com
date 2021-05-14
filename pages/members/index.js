@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
-import {NavGroup} from '../../components/NavGroup';
-import { Title } from '../../components/Title';
-import { Thumbnail } from '../../components/Thumbnail';
+import { MyHead } from '../../components/MyHead';
+import { NavGroup } from '../../components/NavGroup';
+import { MyHeader } from '../../components/MyHeader';
+import { CarouselWithThumbnails } from '../../components/CarouselWithThumbnails';
 import styles from '../../styles/Members.module.scss';
 import { motion } from 'framer-motion';
 import { BASE_URL } from '../../constants/url';
@@ -38,17 +38,12 @@ const Members = ( {members} ) => {
                  }
                },
           }} className={styles.single}>
-               <Head>
-                    <title>Members</title>
-                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet"></link>
-                    <link rel="icon" href="/favicon.ico" />
-               </Head>
+               <MyHead title='Our Members' />
                <div className={styles.title}>
-                    <Title toggleNav={toggleNavigation}/>
+                    <MyHeader toggleNav={toggleNavigation}/>
                </div>
                <NavGroup isNavShowing={isNavShowing}/>
-               <Thumbnail members={ members } />
+               <CarouselWithThumbnails members={ members } />
           </motion.div>
      );
 }

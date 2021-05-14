@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ButtonMore } from '../../components/Button';
+import { MyHead } from '../../components/MyHead';
+import { MyButton } from '../../components/MyButton';
 import { NavGroup } from '../../components/NavGroup';
 import { SearchBar } from '../../components/SearchBar';
-import { Title } from '../../components/Title';
+import { MyHeader } from '../../components/MyHeader';
 import styles from '../../styles/MemberDetails.module.scss';
 import { BASE_URL } from '../../constants/url';
 import { data } from '../../services/mockApi/db';
@@ -52,14 +52,9 @@ export const getStaticPaths = async () => {
      
     return ( 
           <div className={styles.single}>
-            <Head>
-              <title>{member.name} | Profile</title>
-              <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"></link>
-              <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MyHead title={member.name + " | Profile"} />
             <div className={styles.title}>
-              <Title toggleNav={toggleNavigation}/>
+              <MyHeader toggleNav={toggleNavigation}/>
               <SearchBar />
             </div>
             <NavGroup isNavShowing={isNavShowing}/>
@@ -72,10 +67,10 @@ export const getStaticPaths = async () => {
                 <p className={styles.department}>{member.department}</p>
                 <div className={styles.biography} dangerouslySetInnerHTML={createMarkup(member)} />
                 <div className={styles.btn_group}>
-                  <ButtonMore content="Contact me" type="primary"/>
+                  <MyButton content="Contact me" type="primary"/>
                   <Link href="/members">
                     <a> 
-                      <ButtonMore content="Close" type="default"/>
+                      <MyButton content="Close" type="default"/>
                     </a>
                   </Link>
                 </div>

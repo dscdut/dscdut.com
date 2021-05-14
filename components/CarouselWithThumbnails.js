@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import Image from 'next/image';
-import {ButtonMore} from './Button';
-import styles from '../styles/Thumbnail.module.scss';
+import { MyButton } from './MyButton';
+import styles from '../styles/CarouselWithThumbnails.module.scss';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export const Thumbnail = ( {members} ) => {
+export const CarouselWithThumbnails = ( {members} ) => {
 
      const primaryOptions = {
           type      : 'loop',
@@ -52,7 +52,7 @@ export const Thumbnail = ( {members} ) => {
                          <h1 className={styles.name}>{ member.name }</h1>
                          <p className={styles.department}>{ member.department }</p>
                          <Link  href={'/members/' + member.id} >
-                              <a><ButtonMore content="Know more" type="primary"/></a>
+                              <a><MyButton content="Know more" type="primary"/></a>
                          </Link>
                     </div>
                     <div className={styles.avatar}>

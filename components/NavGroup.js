@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/NavGroup.module.scss'
-import {NavItem} from './NavItem';
-import {navItems} from '../constants/navItems';
+import { NavItem } from './NavItem';
+import { navItems } from '../constants/navItems';
 
 export const NavGroup = ({ isNavShowing }) => {
      return(

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Input } from 'antd';
 import { FacebookFilled, MailFilled, PhoneFilled  } from '@ant-design/icons';
-import { ButtonMore } from './Button';
+import { MyButton } from './MyButton';
 import styles from '../styles/Footer.module.scss'
 import 'antd/es/input/style/index.css';
 
@@ -29,7 +29,7 @@ export const Footer = () => {
                          <Input className={styles.question_elem} size="large" placeholder="Name" />
                          <Input className={styles.question_elem} size="large" placeholder="Question" />
                          <div className={styles.question_elem}>
-                              <ButtonMore content="Send" type='primary' />
+                              <MyButton content="Send" type='primary' />
                          </div>
                     </div>
                </div>    

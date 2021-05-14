@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/HomeMain.module.scss'
 import Link from 'next/link';
 import Image from 'next/image';
-import {Title} from './Title';
-import {CarouselInfo} from './CarouselInfo';
-import {ButtonMore} from './Button';
+import { MyHeader } from './MyHeader';
+import { CarouselInfo } from './CarouselInfo';
+import { MyButton } from './MyButton';
 import { motion } from 'framer-motion';
 
-export const Home = ({ toggleNav }) => {
+export const HomeMain = ({ toggleNav }) => {
 
      const toggleNavigation = () => {
           toggleNav();
@@ -28,7 +28,7 @@ export const Home = ({ toggleNav }) => {
                },
              }} className={styles.single}>
                <div className={styles.content}>
-                    <Title toggleNav={toggleNavigation}/>
+                    <MyHeader toggleNav={toggleNavigation}/>
                     <div className={styles.img_container}>
                          <Image
                          alt='cover'
@@ -41,7 +41,7 @@ export const Home = ({ toggleNav }) => {
                     </div>
                     <CarouselInfo />
                     <Link href='/ourteam'>
-                         <a className={styles.btn}><ButtonMore content="Find out more" type="primary"/></a>
+                         <a className={styles.btn}><MyButton content="Find out more" type="primary"/></a>
                     </Link>
                </div>
           </motion.div>  
