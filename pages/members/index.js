@@ -20,24 +20,26 @@ const Members = ( {members} ) => {
 
      const [isNavShowing, setIsNavShowing] = useState(false);
 
+     const variants = {
+          hidden: {
+               scale: 1,
+               opacity: 0
+          },
+          visible: {
+               scale: 1,
+               opacity: 1,
+               transition: {
+                    delay: .8
+               }
+          }
+     };
+
      const toggleNavigation = () => {  
           setIsNavShowing(!isNavShowing);
      }
 
      return (  
-          <motion.div initial="hidden" animate="visible" variants={{
-               hidden: {
-                 scale: 1,
-                 opacity: 0
-               },
-               visible: {
-                 scale: 1,
-                 opacity: 1,
-                 transition: {
-                   delay: .8
-                 }
-               },
-          }} className={styles.single}>
+          <motion.div initial="hidden" animate="visible" variants={variants} className={styles.single}>
                <MyHead title='Our Members' />
                <div className={styles.title}>
                     <MyHeader toggleNav={toggleNavigation}/>

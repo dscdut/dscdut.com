@@ -104,7 +104,7 @@
 @media only screen and (max-width: 600px) {
 	.single {
 		position: relative;
-		margin: 0 auto;
+		margin: 5px auto;
 		display: block;
 		width: 100%;
 		height: auto;
@@ -163,5 +163,6 @@
 	}
 	.secondary_wrapper {
 		padding: 0px;
+		margin-bottom: 20px;
 	}
 }

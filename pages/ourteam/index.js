@@ -29,6 +29,16 @@ const OurTeam = ( {team} ) => {
           setIsNavShowing(!isNavShowing);
      }
 
+     const hoverMotion = {
+          position: 'relative',
+          zIndex: 1,
+          background: 'white',
+          scale: [1, 1.05],   
+          transition: {
+               duration: .3
+          }
+     }
+
      return ( 
           <div className={styles.single}>
             <MyHead title='Our Team' />
@@ -60,15 +70,7 @@ const OurTeam = ( {team} ) => {
                                         return(
                                              <motion.div 
                                                   key={member.name}
-                                                  whileHover={{
-                                                       position: 'relative',
-                                                       zIndex: 1,
-                                                       background: 'white',
-                                                       scale: [1, 1.05],   
-                                                       transition: {
-                                                         duration: .3
-                                                       }
-                                                  }}>
+                                                  whileHover={hoverMotion}>
                                              <Card 
                                                   
                                                   className={styles.card}

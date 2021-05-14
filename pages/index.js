@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { MyHead } from '../components/MyHead';
@@ -10,6 +10,7 @@ import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 export default function Home( {toggleNav} ) {
 
   const [isNavShowing, setIsNavShowing] = useState(false);
+  const coverRef = useRef();
 
   const toggleNavigation = () => {  
     setIsNavShowing(!isNavShowing);
@@ -23,7 +24,7 @@ export default function Home( {toggleNav} ) {
     arrows: false,
     pagination: false,
     autoplay: 'true',
-    interval: 3000,
+    interval: 4000,
   }
 
   const coverImages = ['/images/cover.jpg', '/images/cover2.jpg'];
@@ -34,7 +35,7 @@ export default function Home( {toggleNav} ) {
       <MyHead title='DSC-DUT Website' />
 
       <div className={styles.background}>
-        <Splide className={styles.wrapper} options={ options }>
+        <Splide className={styles.wrapper} options={ options } ref={coverRef}>
           {coverImages.map(image => {
             return(
               <SplideSlide className={styles.slide} key={image}>
@@ -51,7 +52,7 @@ export default function Home( {toggleNav} ) {
         </Splide>
       </div>
       
-      <HomeMain toggleNav={toggleNavigation} />
+      <HomeMain toggleNav={toggleNavigation} coverRef={coverRef}/>
     </div>
     <NavGroup isNavShowing={isNavShowing}/>
     </>
