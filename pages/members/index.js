@@ -20,35 +20,26 @@ export const getStaticProps = async () => {
 const Members = ( {members} ) => {
 
      const [isNavShowing, setIsNavShowing] = useState(false);
-
-     const variants = {
-          hidden: {
-               scale: 1,
-               opacity: 0
-          },
-          visible: {
-               scale: 1,
-               opacity: 1,
-               transition: {
-                    delay: .8
-               }
-          }
-     };
+     const [index, setIndex] = useState(0);
 
      const toggleNavigation = () => {  
           setIsNavShowing(!isNavShowing);
      }
 
+     const changeIndex = () => {
+          setIndex((index + 1) % 3);
+     }
+
      return (  
-          <motion.div initial="hidden" animate="visible" variants={variants} className={styles.single}>
+          <div className={styles.single}>
                <MyHead title='Our Members' />
-               <MembersBackground />
+               <MembersBackground backgroundIndex={index}/>
                <div className={styles.title}>
                     <MyHeader toggleNav={toggleNavigation}/>
                </div>
                <NavGroup isNavShowing={isNavShowing}/>
-               <CarouselWithThumbnails members={ members } />
-          </motion.div>
+               <CarouselWithThumbnails members={ members } change={changeIndex}/>
+          </div>
      );
 }
  

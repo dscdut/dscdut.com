@@ -7,14 +7,13 @@ import { NavGroup } from '../components/NavGroup';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export default function Home( {toggleNav} ) {
+export default function Home() {
 
   const [isNavShowing, setIsNavShowing] = useState(false);
   const coverRef = useRef();
 
   const toggleNavigation = () => {  
     setIsNavShowing(!isNavShowing);
-    console.log('toggle');
   }
 
   const options = {
@@ -25,6 +24,7 @@ export default function Home( {toggleNav} ) {
     pagination: false,
     autoplay: 'true',
     interval: 4000,
+    drag: false
   }
 
   const coverImages = ['/images/cover.jpg', '/images/cover2.jpg'];

@@ -10,13 +10,18 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }) {
-  
+
   const showImages = () => {
     var images = [];
     images = document.querySelectorAll(`img`);
     console.log(images.length)
     for(let i = 0; i < images.length; i++){
-      images[i].onload = () => { images[i].style.opacity = 1}
+      if(i <= 10 ){
+        images[i].style.opacity = 1
+      }
+      else{
+        images[i].onload = () => { images[i].style.opacity = 1}
+      }
     }
     console.log('loaded!');
   }

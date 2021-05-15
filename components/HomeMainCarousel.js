@@ -4,12 +4,13 @@ import { aboutDsc } from '../constants/aboutDsc';
 import styles from '../styles/HomeMainCarousel.module.scss'
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export const HomeMainCarousel = ( {coverRef} ) => {
+export const HomeMainCarousel = ( {coverRef, coverMobileRef} ) => {
 
      const aboutRef = useRef();
 
      useEffect(() => {
           aboutRef.current.sync(coverRef.current.splide);
+          aboutRef.current.sync(coverMobileRef.current.splide);
      }, []);
 
      const options = {
