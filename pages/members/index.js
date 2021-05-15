@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MyHead } from '../../components/MyHead';
+import { MembersBackground } from '../../components/MembersBackground';
 import { NavGroup } from '../../components/NavGroup';
 import { MyHeader } from '../../components/MyHeader';
 import { CarouselWithThumbnails } from '../../components/CarouselWithThumbnails';
@@ -41,6 +42,7 @@ const Members = ( {members} ) => {
      return (  
           <motion.div initial="hidden" animate="visible" variants={variants} className={styles.single}>
                <MyHead title='Our Members' />
+               <MembersBackground />
                <div className={styles.title}>
                     <MyHeader toggleNav={toggleNavigation}/>
                </div>

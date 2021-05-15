@@ -11,11 +11,18 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }) {
   
-  useEffect(() => {
-    var images = document.querySelectorAll(`img`);
+  const showImages = () => {
+    var images = [];
+    images = document.querySelectorAll(`img`);
+    console.log(images.length)
     for(let i = 0; i < images.length; i++){
       images[i].onload = () => { images[i].style.opacity = 1}
     }
+    console.log('loaded!');
+  }
+
+  useEffect(() => {
+    setTimeout(showImages, 500);
   });
 
   const variants = {
@@ -25,14 +32,13 @@ function MyApp({ Component, pageProps, router }) {
     pageAnimate: {
       opacity: 1
     },
-    pageExit: {
-      backgroundColor: 'white',
+    pageExit: { 
       opacity: 0
     }
   };
   
   return (
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit='pageExit' variants={variants}>
           <Component {...pageProps} />
         </motion.div>
