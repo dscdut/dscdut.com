@@ -66,8 +66,14 @@ button {
 }
 .splide__track {
 	&:nth-of-type(2) {
-		margin: 0px 50px !important;
+		margin: 0px 50px;
 	}
+}
+.splide__arrow{
+	transform: translateX(40px) !important;
+}
+#splide03-track{
+	margin: 0px !important;
 }
 .splide__list {
 	width: 100vw;
@@ -99,4 +105,10 @@ button {
 img{
 	opacity: 0;
 	transition-duration: 500ms;
+}
+
+@media only screen and (max-width: 600px) {
+	body{
+		margin-top: 65px;
+	}
 }

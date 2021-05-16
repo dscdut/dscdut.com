@@ -22,12 +22,24 @@ export default function Home() {
     rewind: true,
     arrows: false,
     pagination: false,
-    autoplay: 'true',
+    autoplay: true,
     interval: 4000,
     drag: false
   }
 
   const coverImages = ['/images/cover.jpg', '/images/cover2.jpg'];
+
+  const renderSplide = coverImages.map( image => (
+    <SplideSlide className={styles.slide} key={image}>
+          <Image 
+          alt="Cover"
+          src={image}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          />
+    </SplideSlide>
+  ));
 
   return (
     <>
@@ -36,19 +48,7 @@ export default function Home() {
 
       <div className={styles.background}>
         <Splide className={styles.wrapper} options={ options } ref={coverRef}>
-          {coverImages.map(image => {
-            return(
-              <SplideSlide className={styles.slide} key={image}>
-                    <Image 
-                    alt="Cover"
-                    src={image}
-                    layout="fill"
-                    objectFit="cover"
-                    quality={100}
-                    />
-			        </SplideSlide>
-            );
-          })}
+          {renderSplide}
         </Splide>
       </div>
       

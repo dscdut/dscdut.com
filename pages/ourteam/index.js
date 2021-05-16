@@ -39,6 +39,31 @@ const OurTeam = ( {team} ) => {
           }
      }
 
+     const renderCard = (member) => (
+          <Image className={styles.img}
+          height={300}
+          width={300}
+          alt={member.name}
+          src={member.avatar}
+          />
+     );
+
+     const renderTeam = team.map( group => (
+          <div key={group.id} className={styles.group_container}>
+               <h1 className={styles.group_name}>{group.name.toUpperCase()}</h1>
+               <div className={styles.group_members}>
+                    {group.group.map(member => (
+                         <motion.div key={member.name} whileHover={hoverMotion}>
+                              <Card className={styles.card} cover={renderCard(member)}>
+                                   <Meta className={styles.meta} title={member.role} description={member.name} />
+                              </Card>
+                         </motion.div>
+                         )
+                    )}
+               </div>
+          </div>
+     ));
+
      return ( 
           <div className={styles.single}>
             <MyHead title='Our Team' />
@@ -61,37 +86,7 @@ const OurTeam = ( {team} ) => {
                  />
             </div>
             <div className={styles.team}>
-               {team.map(group => {
-                    return(
-                         <div key={group.id} className={styles.group_container}>
-                              <h1 className={styles.group_name}>{group.name.toUpperCase()}</h1>
-                              <div className={styles.group_members}>
-                                   {group.group.map(member => {
-                                        return(
-                                             <motion.div 
-                                                  key={member.name}
-                                                  whileHover={hoverMotion}>
-                                             <Card 
-                                                  
-                                                  className={styles.card}
-                                                  cover={
-                                                       <Image className={styles.img}
-                                                       height={300}
-                                                       width={300}
-                                                       alt={member.name}
-                                                       src={member.avatar}
-                                                       />
-                                                  }
-                                             >
-                                                  <Meta className={styles.meta} title={member.role} description={member.name} />
-                                             </Card>
-                                             </motion.div>
-                                        );
-                                   })}
-                              </div>
-                         </div>
-                    );
-               })}
+               {renderTeam}
             </div>
             <Footer />
           </div>

@@ -16,10 +16,17 @@ export const HomeMainCarousel = ( {coverRef, coverMobileRef} ) => {
      const options = {
           type: 'slide',
           rewind: true,
-          arrows: false,
+          arrows: true,
+          drag: false,
           pagination: false,
-          autoplay: 'true',
+          autoplay: true,
           interval: 4000,
+          breakpoints : {
+               '600': {
+                    arrows: false,
+                    drag: true
+               }
+          }
         } 
 
      const createMarkup = (string) => {

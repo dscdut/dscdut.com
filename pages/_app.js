@@ -13,8 +13,7 @@ function MyApp({ Component, pageProps, router }) {
 
   const showImages = () => {
     var images = [];
-    images = document.querySelectorAll(`img`);
-    console.log(images.length)
+    images = document.querySelectorAll(`img:not([role="presentation"])`);
     for(let i = 0; i < images.length; i++){
       if(i <= 10 ){
         images[i].style.opacity = 1
@@ -37,7 +36,8 @@ function MyApp({ Component, pageProps, router }) {
       opacity: 1
     },
     pageExit: { 
-      opacity: 0
+      opacity: 0,
+      background: 'black',
     }
   };
   
