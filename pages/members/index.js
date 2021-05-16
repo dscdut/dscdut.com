@@ -20,25 +20,20 @@ export const getStaticProps = async () => {
 const Members = ( {members} ) => {
 
      const [isNavShowing, setIsNavShowing] = useState(false);
-     const [index, setIndex] = useState(0);
 
      const toggleNavigation = () => {  
           setIsNavShowing(!isNavShowing);
      }
 
-     const changeIndex = () => {
-          setIndex((index + 1) % 3);
-     }
-
      return (  
           <div className={styles.single}>
                <MyHead title='Our Members' />
-               <MembersBackground backgroundIndex={index}/>
+               <MembersBackground />
                <div className={styles.title}>
                     <MyHeader toggleNav={toggleNavigation}/>
                </div>
                <NavGroup isNavShowing={isNavShowing}/>
-               <CarouselWithThumbnails members={ members } change={changeIndex}/>
+               <CarouselWithThumbnails members={ members } />
           </div>
      );
 }

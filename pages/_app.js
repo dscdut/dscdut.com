@@ -23,7 +23,6 @@ function MyApp({ Component, pageProps, router }) {
         images[i].onload = () => { images[i].style.opacity = 1}
       }
     }
-    console.log('loaded!');
   }
 
   useEffect(() => {

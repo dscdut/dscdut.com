@@ -6,7 +6,7 @@ import { MyButton } from './MyButton';
 import styles from '../styles/CarouselWithThumbnails.module.scss';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export const CarouselWithThumbnails = ( {members, change} ) => {
+export const CarouselWithThumbnails = ( {members} ) => {
 
      const primaryOptions = {
           type      : 'loop',
@@ -46,10 +46,6 @@ export const CarouselWithThumbnails = ( {members, change} ) => {
           primaryRef.current.sync(secondaryRef.current.splide);
      }, []);
 
-     const changeIndex = () => {
-          change();
-     }
-
 	const renderPrimarySlides =  members.map( member => (
 			<SplideSlide className={styles.member_container} key={ member.id }>
                     <div className={styles.info}>
@@ -73,7 +69,7 @@ export const CarouselWithThumbnails = ( {members, change} ) => {
 
      return (
 		<div className={styles.single}>
-			<Splide className={styles.wrapper} options={ primaryOptions } onMoved={changeIndex} ref={ primaryRef } >
+			<Splide className={styles.wrapper} options={ primaryOptions } ref={ primaryRef } >
 				{ renderPrimarySlides }
 			</Splide>
 

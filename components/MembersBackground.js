@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/MembersBackground.module.scss';
 
-export const MembersBackground = ( {backgroundIndex} ) => {
+export const MembersBackground = () => {
      return(
           <>
                <div className={styles.background}>
