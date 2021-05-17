@@ -36,14 +36,14 @@ function MyApp({ Component, pageProps, router }) {
       opacity: 1
     },
     pageExit: { 
-      opacity: 0,
-      background: 'black',
+      width: 0,
+      opacity: 0
     }
   };
   
   return (
       <AnimatePresence exitBeforeEnter>
-        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit='pageExit' variants={variants}>
+        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit='pageExit' transition={{ duration: 0.5 }} variants={variants}>
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
