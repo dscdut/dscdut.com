@@ -4,12 +4,15 @@ import Router from 'next/router';
 import NProgress from 'nprogress'; 
 import 'nprogress/nprogress.css'; 
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTransitionFix } from '../helpers/useTransitionFix';
  
 Router.events.on('routeChangeStart', () => NProgress.start()); 
 Router.events.on('routeChangeComplete', () => NProgress.done()); 
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }) {
+
+  const transitionCallback = useTransitionFix();
 
   const showImages = () => {
     var images = [];
@@ -28,7 +31,7 @@ function MyApp({ Component, pageProps, router }) {
     setTimeout(showImages, 500);
   });
 
-  const variants = {
+  const PAGE_VARIANTS = {
     pageInitial: {
       opacity: 0
     },
@@ -36,14 +39,13 @@ function MyApp({ Component, pageProps, router }) {
       opacity: 1
     },
     pageExit: { 
-      width: 0,
       opacity: 0
     }
   };
   
   return (
-      <AnimatePresence exitBeforeEnter>
-        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit='pageExit' transition={{ duration: 0.5 }} variants={variants}>
+      <AnimatePresence exitBeforeEnter onExitComplete={transitionCallback}>
+        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit='pageExit' variants={PAGE_VARIANTS}>
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
