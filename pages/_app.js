@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps, router }) {
 
   const transitionCallback = useTransitionFix();
 
+  //Temporary fix
   const showImages = () => {
     var images = [];
     images = document.querySelectorAll(`img:not([role="presentation"])`);
