@@ -6,10 +6,9 @@ import { MyHeader } from '../../components/MyHeader';
 import { CarouselWithThumbnails } from '../../components/CarouselWithThumbnails';
 import styles from '../../styles/Members.module.scss';
 import { motion } from 'framer-motion';
-import { BASE_URL } from '../../constants/url';
 
 export const getStaticProps = async () => {
-  const res = await fetch(BASE_URL + '/members');
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/members');
   const data = await res.json();
 
   return {

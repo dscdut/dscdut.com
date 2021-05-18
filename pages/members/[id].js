@@ -7,11 +7,10 @@ import { NavGroup } from '../../components/NavGroup';
 import { SearchBar } from '../../components/SearchBar';
 import { MyHeader } from '../../components/MyHeader';
 import styles from '../../styles/MemberDetails.module.scss';
-import { BASE_URL } from '../../constants/url';
 import { data } from '../../services/mockApi/db';
 
 export const getStaticPaths = async () => {
-    //  const res = await fetch(BASE_URL + '/members');
+    //  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/members');
     //  const data = await res.json();
    
      const paths = data.map(member => {
@@ -28,7 +27,7 @@ export const getStaticPaths = async () => {
    
    export const getStaticProps = async (context) => {
     const id = context.params.id;
-    //  const res = await fetch(BASE_URL + 'members/' + id);
+    //  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + 'members/' + id);
     //  const data = await res.json();
     const myData = data[id-1]
    
