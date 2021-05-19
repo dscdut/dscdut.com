@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MyHead } from '../../components/MyHead';
-import { MyButton } from '../../components/MyButton';
-import { NavGroup } from '../../components/NavGroup';
-import { SearchBar } from '../../components/SearchBar';
-import { MyHeader } from '../../components/MyHeader';
+import sanitizeHtml from 'sanitize-html';
+import { Markup } from 'interweave';
+import MyHead from '../../components/common/Head/MyHead';
+import MyButton from '../../components/common/Button/MyButton';
+import NavGroup from '../../components/common/Navbar/NavGroup';
+import SearchBar from '../../components/common/SearchBar/SearchBar';
+import MyHeader from '../../components/common/Header/MyHeader';
 import styles from '../../styles/MemberDetails.module.scss';
 import { data } from '../../services/mockApi/db';
 
@@ -41,8 +44,6 @@ const MemberDetails = ({ member }) => {
     setIsNavShowing(!isNavShowing);
   };
 
-  const createMarkup = (member) => ({ __html: member.biography });
-
   return (
     <div className={styles.single}>
       <MyHead title={`${member.name} | Profile`} />
@@ -58,11 +59,13 @@ const MemberDetails = ({ member }) => {
         <div className={styles.content}>
           <h1 className={styles.name}>{member.name}</h1>
           <p className={styles.department}>{member.department}</p>
-          <div className={styles.biography} dangerouslySetInnerHTML={createMarkup(member)} />
+          <div className={styles.biography}>
+            <Markup content={sanitizeHtml(member.biography)} />
+          </div>
           <div className={styles.btn_group}>
             <MyButton content="Contact me" type="primary" />
             <Link href="/members">
-              <a>
+              <a href="/members">
                 <MyButton content="Close" type="default" />
               </a>
             </Link>
@@ -72,6 +75,15 @@ const MemberDetails = ({ member }) => {
     </div>
 
   );
+};
+
+MemberDetails.propTypes = {
+  member: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    department: PropTypes.string.isRequired,
+    biography: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default MemberDetails;

@@ -1,8 +1,9 @@
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import styles from '../styles/MembersBackground.module.scss';
+import styles from '../../../styles/MembersBackground.module.scss';
 
-export const MembersBackground = () => {
+export default function MembersBackground() {
   const variants = {
     hidden: {
       scale: 0.8,
@@ -27,4 +28,4 @@ export const MembersBackground = () => {
       </div>
     </motion.div>
   );
-};
+}

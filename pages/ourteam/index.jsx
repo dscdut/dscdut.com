@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Card } from 'antd';
 import { motion } from 'framer-motion';
-import { MyHead } from '../../components/MyHead';
-import { NavGroup } from '../../components/NavGroup';
-import { MyHeader } from '../../components/MyHeader';
-import { SearchBar } from '../../components/SearchBar';
-import { Footer } from '../../components/Footer';
+import MyHead from '../../components/common/Head/MyHead';
+import NavGroup from '../../components/common/Navbar/NavGroup';
+import MyHeader from '../../components/common/Header/MyHeader';
+import SearchBar from '../../components/common/SearchBar/SearchBar';
+import Footer from '../../components/common/Footer/Footer';
 import styles from '../../styles/OurTeam.module.scss';
 
 const { Meta } = Card;
@@ -90,6 +91,19 @@ const OurTeam = ({ team }) => {
     </div>
 
   );
+};
+
+OurTeam.propTypes = {
+  team: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    group: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+    })),
+  })).isRequired,
 };
 
 export default OurTeam;

@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import Image from 'next/image';
-import { MyButton } from './MyButton';
-import styles from '../styles/CarouselWithThumbnails.module.scss';
+import MyButton from '../../common/Button/MyButton';
+import styles from '../../../styles/MembersCarouselWithThumbnails.module.scss';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export const CarouselWithThumbnails = ({ members }) => {
+export default function MembersCarouselWithThumbnails({ members }) {
   const primaryOptions = {
     type: 'loop',
     gap: '10rem',
@@ -51,11 +52,19 @@ export const CarouselWithThumbnails = ({ members }) => {
         <h1 className={styles.name}>{ member.name }</h1>
         <p className={styles.department}>{ member.department }</p>
         <Link href={`/members/${member.id}`}>
-          <a><MyButton content="Know more" type="primary" /></a>
+          <a href={`/members/${member.id}`}>
+            <MyButton content="Know more" type="primary" />
+          </a>
         </Link>
       </div>
       <div className={styles.avatar}>
-        <Image placeholder="blur" className={styles.img} src={member.avatar} alt={member.name} width={400} height={600} />
+        <Image
+          className={styles.img}
+          src={member.avatar}
+          alt={member.name}
+          width={400}
+          height={600}
+        />
       </div>
     </SplideSlide>
   ));
@@ -77,4 +86,13 @@ export const CarouselWithThumbnails = ({ members }) => {
       </Splide>
     </div>
   );
+}
+
+MembersCarouselWithThumbnails.propTypes = {
+  members: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    department: PropTypes.string.isRequired,
+  })).isRequired,
 };

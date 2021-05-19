@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import styles from '../styles/Home.module.scss';
-import { MyHead } from '../components/MyHead';
-import { HomeMain } from '../components/HomeMain';
-import { NavGroup } from '../components/NavGroup';
+import MyHead from '../components/common/Head/MyHead';
+import HomeMain from '../components/uncommon/Home/HomeMain';
+import NavGroup from '../components/common/Navbar/NavGroup';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
 export default function Home() {

@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 import React, { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
-import styles from '../styles/HomeMain.module.scss';
-import { MyHeader } from './MyHeader';
-import { HomeMainCarousel } from './HomeMainCarousel';
-import { MyButton } from './MyButton';
+import styles from '../../../styles/HomeMain.module.scss';
+import MyHeader from '../../common/Header/MyHeader';
+import HomeMainCarousel from './HomeMainCarousel';
+import MyButton from '../../common/Button/MyButton';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export const HomeMain = ({ toggleNav, coverRef }) => {
+export default function HomeMain({ toggleNav, coverRef }) {
   const variants = {
     hidden: {
       scale: 0.8,
@@ -68,9 +69,11 @@ export const HomeMain = ({ toggleNav, coverRef }) => {
         </div>
         <HomeMainCarousel coverRef={coverRef} coverMobileRef={coverMobileRef} />
         <Link href="/ourteam">
-          <a className={styles.btn}><MyButton content="Find out more" type="primary" /></a>
+          <a className={styles.btn} href="/ourteam">
+            <MyButton content="Find out more" type="primary" />
+          </a>
         </Link>
       </div>
     </motion.div>
   );
-};
+}

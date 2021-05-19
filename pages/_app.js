@@ -1,33 +1,24 @@
-import { useEffect } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
+import React, { useEffect } from 'react';
 import '../styles/globals.scss';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTransitionFix } from '../helpers/useTransitionFix';
+import useTransitionFix from '../helpers/useTransitionFix';
+import useImageFadeInTransition from '../helpers/useImageFadeInTransition';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+// eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps, router }) {
   const transitionCallback = useTransitionFix();
 
-  // Temporary fix
-  const showImages = () => {
-    let images = [];
-    images = document.querySelectorAll('img:not([role="presentation"])');
-    for (let i = 0; i < images.length; i++) {
-      if (i <= 10) {
-        images[i].style.opacity = 1;
-      } else {
-        images[i].onload = () => { images[i].style.opacity = 1; };
-      }
-    }
-  };
-
   useEffect(() => {
-    setTimeout(showImages, 500);
+    setTimeout(useImageFadeInTransition, 500);
   });
 
   const PAGE_VARIANTS = {
@@ -43,6 +34,7 @@ function MyApp({ Component, pageProps, router }) {
   };
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <AnimatePresence exitBeforeEnter onExitComplete={transitionCallback}>
       <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={PAGE_VARIANTS}>
         <Component {...pageProps} />

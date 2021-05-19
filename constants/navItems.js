@@ -1,4 +1,4 @@
-export const navItems = [
+const navItems = [
   {
     color: '#EA4335',
     icon: 'home',
@@ -23,3 +23,5 @@ export const navItems = [
     link: '/members',
   },
 ];
+
+export default navItems;

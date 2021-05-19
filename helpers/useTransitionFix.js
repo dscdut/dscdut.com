@@ -1,7 +1,8 @@
+/* eslint-disable no-restricted-syntax */
 import Router from 'next/router';
 import { useCallback, useEffect, useRef } from 'react';
 
-export const useTransitionFix = () => {
+const useTransitionFix = () => {
   const cleanupRef = useRef(() => {});
 
   useEffect(() => {
@@ -43,3 +44,5 @@ export const useTransitionFix = () => {
     cleanupRef.current();
   }, []);
 };
+
+export default useTransitionFix;

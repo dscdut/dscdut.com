@@ -2,17 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Input, Avatar } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import searchMembers from '../helpers/searchMembers';
-import styles from '../styles/SearchBar.module.scss';
+import searchMembers from '../../../helpers/searchMembers';
+import styles from '../../../styles/SearchBar.module.scss';
 import 'antd/es/input/style/index.css';
 import 'antd/es/avatar/style/index.css';
 
-export const SearchBar = () => {
+export default function SearchBar() {
   const [value, setValue] = useState('');
   const [members, setMembers] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-
   const inputRef = useRef();
+
+  const search = async (data) => {
+    const filteredMembers = await searchMembers(data);
+    setMembers(filteredMembers);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
       if (value === inputRef.current.state.value) {
@@ -23,12 +27,6 @@ export const SearchBar = () => {
       clearTimeout(timer);
     };
   }, [inputRef, value]);
-
-  const search = async (data) => {
-    const filteredMembers = await searchMembers(data);
-    console.log(filteredMembers);
-    setMembers(filteredMembers);
-  };
 
   const onChange = (e) => {
     const val = e.target.value;
@@ -58,13 +56,13 @@ export const SearchBar = () => {
       <div className={isSearching ? styles.dropdown : styles.dropdown_invisible}>
         {members.map((member) => (
           <Link href={`/members/${member.id}`} key={member.id}>
-            <a className={styles.dropdown_item}>
+            <div className={styles.dropdown_item}>
               <Avatar className={styles.avatar} src={member.avatar} />
               <p className={styles.name}>{member.name}</p>
-            </a>
+            </div>
           </Link>
         ))}
       </div>
     </div>
   );
-};
+}
