@@ -4,11 +4,13 @@ const isInViewport = (el) => {
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
   const { clientHeight, clientWidth } = document.documentElement;
+  const rectHeightOffset = rect.bottom - rect.top;
+  const rectWidthOffset = rect.right - rect.left;
   return (
-    rect.top >= 0
-    && rect.left >= 0
-    && rect.bottom <= (windowHeight || clientHeight) + (rect.bottom - rect.top)
-    && rect.right <= (windowWidth || clientWidth)
+    rect.top >= 0 - rectHeightOffset
+    && rect.left >= 0 - rectWidthOffset
+    && rect.bottom <= (windowHeight || clientHeight) + rectHeightOffset
+    && rect.right <= (windowWidth || clientWidth) + rectWidthOffset
   );
 };
 

@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <MyHead title="DSC-DUT Website" />
+        <MyHead title="DSC-DUT | Home" />
 
         <div className={styles.background}>
           <Splide className={styles.wrapper} options={options} ref={coverRef}>

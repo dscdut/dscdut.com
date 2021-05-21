@@ -5,7 +5,9 @@ import '../styles/globals.scss';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import '../styles/customTooltip.scss';
 import { motion, AnimatePresence } from 'framer-motion';
+import { appWithTranslation } from 'next-i18next';
 import useTransitionFix from '../helpers/useTransitionFix';
 import useImageFadeInTransition from '../helpers/useImageFadeInTransition';
 
@@ -43,4 +45,4 @@ function MyApp({ Component, pageProps, router }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

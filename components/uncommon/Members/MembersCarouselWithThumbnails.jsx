@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import Image from 'next/image';
+import { Tooltip } from 'antd';
 import MyButton from '../../common/Button/MyButton';
 import styles from '../../../styles/MembersCarouselWithThumbnails.module.scss';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
+import 'antd/es/tooltip/style/index.css';
 
 export default function MembersCarouselWithThumbnails({ members }) {
   const primaryOptions = {
@@ -71,7 +73,9 @@ export default function MembersCarouselWithThumbnails({ members }) {
 
   const renderSecondarySlides = members.map((member) => (
     <SplideSlide className={styles.secondary_container} key={member.id}>
-      <Image className={styles.secondary_img} src={member.avatar} alt={member.name} width={120} height={120} objectFit="cover" layout="intrinsic" />
+      <Tooltip placement="top" title={member.name}>
+        <Image className={styles.secondary_img} src={member.avatar} alt={member.name} width={120} height={120} objectFit="cover" layout="intrinsic" />
+      </Tooltip>
     </SplideSlide>
   ));
 
