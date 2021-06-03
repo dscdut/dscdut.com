@@ -90,7 +90,7 @@ button {
 	}
 }
 
-img{
+img:not([class='search-avatar']){
 	opacity: 0;
 	transition-duration: 500ms;
 }

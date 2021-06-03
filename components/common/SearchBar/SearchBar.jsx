@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Input, Avatar } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import searchMembers from '../../../helpers/searchMembers';
@@ -34,7 +35,7 @@ export default function SearchBar() {
   };
 
   const disableDropdown = () => {
-    setTimeout(() => { setIsSearching(false); }, 500);
+    setIsSearching(false);
   };
 
   const enableDropdown = () => {
@@ -56,10 +57,10 @@ export default function SearchBar() {
       <div className={isSearching ? styles.dropdown : styles.dropdown_invisible}>
         {members.map((member) => (
           <Link href={`/members/${member.id}`} key={member.id}>
-            <div className={styles.dropdown_item}>
-              <Avatar className={styles.avatar} src={member.avatar} />
+            <a href={`/members/${member.id}`} className={styles.dropdown_item}>
+              <Avatar className={styles.avatar} src={<Image className="search-avatar" src={member.avatar} width={60} height={90} layout="intrinsic" />} />
               <p className={styles.name}>{member.name}</p>
-            </div>
+            </a>
           </Link>
         ))}
       </div>

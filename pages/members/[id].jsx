@@ -12,6 +12,9 @@ import MyHeader from '../../components/common/Header/MyHeader';
 import styles from '../../styles/MemberDetails.module.scss';
 import { data } from '../../services/mockApi/db';
 
+// const ReactMarkdown = require('react-markdown');
+// const gfm = require('remark-gfm');
+
 export const getStaticPaths = async () => {
   //  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/members');
   //  const data = await res.json();
