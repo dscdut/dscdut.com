@@ -31,8 +31,7 @@ export default function HomeMain({ toggleNav, coverRef }) {
     rewind: true,
     arrows: false,
     pagination: false,
-    autoplay: 'true',
-    interval: 4000,
+    autoplay: false,
     drag: false,
   };
 

@@ -12,7 +12,7 @@ export default function HomeMainCarousel({ coverRef, coverMobileRef }) {
 
   useEffect(() => {
     aboutRef.current.sync(coverRef.current.splide);
-    aboutRef.current.sync(coverMobileRef.current.splide);
+    coverMobileRef.current.sync(aboutRef.current.splide);
   });
 
   const options = {
@@ -23,6 +23,7 @@ export default function HomeMainCarousel({ coverRef, coverMobileRef }) {
     pagination: false,
     autoplay: true,
     interval: 4000,
+    resetProgress: false,
     breakpoints: {
       600: {
         arrows: false,

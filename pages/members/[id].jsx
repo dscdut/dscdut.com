@@ -76,7 +76,6 @@ const MemberDetails = ({ member }) => {
         </div>
       </div>
     </div>
-
   );
 };
 

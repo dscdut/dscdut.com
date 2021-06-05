@@ -35,7 +35,7 @@ export default function SearchBar() {
   };
 
   const disableDropdown = () => {
-    setIsSearching(false);
+    setTimeout(() => setIsSearching(false), 200);
   };
 
   const enableDropdown = () => {

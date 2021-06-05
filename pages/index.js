@@ -22,8 +22,7 @@ export default function Home() {
     rewind: true,
     arrows: false,
     pagination: false,
-    autoplay: true,
-    interval: 4000,
+    autoplay: false,
     drag: false,
   };
 
