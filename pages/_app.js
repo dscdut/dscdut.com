@@ -4,10 +4,12 @@ import React, { useEffect } from 'react';
 import '../styles/globals.scss';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { Provider } from 'react-redux';
 import 'nprogress/nprogress.css';
 import '../styles/customTooltip.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next';
+import store from '../redux/store';
 import useTransitionFix from '../helpers/useTransitionFix';
 import useImageFadeInTransition from '../helpers/useImageFadeInTransition';
 
@@ -39,7 +41,9 @@ function MyApp({ Component, pageProps, router }) {
     // eslint-disable-next-line react/jsx-filename-extension
     <AnimatePresence exitBeforeEnter onExitComplete={transitionCallback}>
       <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={PAGE_VARIANTS}>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </motion.div>
     </AnimatePresence>
   );

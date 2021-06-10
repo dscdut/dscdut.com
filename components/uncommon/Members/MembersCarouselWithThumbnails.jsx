@@ -1,15 +1,20 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import Image from 'next/image';
 import { Tooltip } from 'antd';
+import { connect } from 'react-redux';
 import MyButton from '../../common/Button/MyButton';
+import ImageUrl from '../../../constants/imageUrl';
 import styles from '../../../styles/MembersCarouselWithThumbnails.module.scss';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 import 'antd/es/tooltip/style/index.css';
+import { openMemberInfo } from '../../../redux/actions';
 
-export default function MembersCarouselWithThumbnails({ members }) {
+function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
   const primaryOptions = {
     type: 'loop',
     gap: '10rem',
@@ -19,6 +24,7 @@ export default function MembersCarouselWithThumbnails({ members }) {
     interval: 3000,
     pauseOnHover: true,
     arrows: false,
+    start: parseInt(memberId, 10) - 1,
     breakpoints: {
       600: {
         fixedWidth: '100vw',
@@ -48,6 +54,10 @@ export default function MembersCarouselWithThumbnails({ members }) {
     primaryRef.current.sync(secondaryRef.current.splide);
   }, []);
 
+  const handleOpenMemberInfo = (id) => {
+    openMemberInfo(id);
+  };
+
   const renderPrimarySlides = members.map((member) => (
     <SplideSlide className={styles.member_container} key={member.id}>
       <div className={styles.info}>
@@ -55,14 +65,14 @@ export default function MembersCarouselWithThumbnails({ members }) {
         <p className={styles.department}>{ member.department }</p>
         <Link href={`/members/${member.id}`}>
           <a href={`/members/${member.id}`}>
-            <MyButton content="Know more" type="primary" />
+            <MyButton content="Know more" type="primary" onClick={handleOpenMemberInfo(member.id)} />
           </a>
         </Link>
       </div>
       <div className={styles.avatar}>
         <Image
           className={styles.img}
-          src={member.avatar}
+          src={`${ImageUrl.IMAGE_BIG_URL}/${member.avatar}`}
           alt={member.name}
           width={400}
           height={600}
@@ -74,7 +84,7 @@ export default function MembersCarouselWithThumbnails({ members }) {
   const renderSecondarySlides = members.map((member) => (
     <SplideSlide className={styles.secondary_container} key={member.id}>
       <Tooltip placement="top" title={member.name}>
-        <Image className={styles.secondary_img} src={member.avatar} alt={member.name} width={120} height={120} objectFit="cover" layout="intrinsic" />
+        <Image className={styles.secondary_img} src={`${ImageUrl.IMAGE_THUMBNAIL_URL}/${member.avatar}`} alt={member.name} width={120} height={120} objectFit="cover" layout="intrinsic" />
       </Tooltip>
     </SplideSlide>
   ));
@@ -100,3 +110,9 @@ MembersCarouselWithThumbnails.propTypes = {
     department: PropTypes.string.isRequired,
   })).isRequired,
 };
+
+const mapStateToProps = (state) => ({
+  memberId: state.member.memberId,
+});
+
+export default connect(mapStateToProps, { openMemberInfo })(MembersCarouselWithThumbnails);

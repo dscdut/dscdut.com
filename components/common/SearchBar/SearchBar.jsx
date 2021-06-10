@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Input, Avatar } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import searchMembers from '../../../helpers/searchMembers';
+import ImageUrl from '../../../constants/imageUrl';
 import styles from '../../../styles/SearchBar.module.scss';
 import 'antd/es/input/style/index.css';
 import 'antd/es/avatar/style/index.css';
@@ -58,7 +59,7 @@ export default function SearchBar() {
         {members.map((member) => (
           <Link href={`/members/${member.id}`} key={member.id}>
             <a href={`/members/${member.id}`} className={styles.dropdown_item}>
-              <Avatar className={styles.avatar} src={<Image className="search-avatar" src={member.avatar} width={60} height={90} layout="intrinsic" />} />
+              <Avatar className={styles.avatar} src={<Image className="search-avatar" src={`${ImageUrl.IMAGE_AVATAR_URL}/${member.avatar}`} width={60} height={90} layout="intrinsic" />} />
               <p className={styles.name}>{member.name}</p>
             </a>
           </Link>

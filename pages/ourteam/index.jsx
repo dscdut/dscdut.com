@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Card } from 'antd';
@@ -8,6 +8,7 @@ import NavGroup from '../../components/common/Navbar/NavGroup';
 import MyHeader from '../../components/common/Header/MyHeader';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import Footer from '../../components/common/Footer/Footer';
+import ImageUrl from '../../constants/imageUrl';
 import styles from '../../styles/OurTeam.module.scss';
 
 const { Meta } = Card;
@@ -16,18 +17,24 @@ export const getStaticProps = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/ourteam`);
   const data = await res.json();
 
+  // const departments = new Set();
+  // data.forEach((member) => departments.add(member.department));
+
+  // const result = [];
+  // departments.forEach((department) => {
+  //   const group = data.filter((member) => member.department === department);
+  //   result.push({
+  //     department,
+  //     group,
+  //   });
+  // });
+
   return {
     props: { team: data },
   };
 };
 
 const OurTeam = ({ team }) => {
-  const [isNavShowing, setIsNavShowing] = useState(false);
-
-  const toggleNavigation = () => {
-    setIsNavShowing(!isNavShowing);
-  };
-
   const hoverMotion = {
     position: 'relative',
     zIndex: 1,
@@ -44,7 +51,7 @@ const OurTeam = ({ team }) => {
       height={300}
       width={300}
       alt={member.name}
-      src={member.avatar}
+      src={`${ImageUrl.IMAGE_MEDIUM_URL}/${member.avatar}`}
     />
   );
 
@@ -67,10 +74,10 @@ const OurTeam = ({ team }) => {
     <div className={styles.single}>
       <MyHead title="Our Team" />
       <div className={styles.title}>
-        <MyHeader toggleNav={toggleNavigation} />
+        <MyHeader />
         <SearchBar />
       </div>
-      <NavGroup isNavShowing={isNavShowing} />
+      <NavGroup />
 
       <div className={styles.cover}>
         <Image

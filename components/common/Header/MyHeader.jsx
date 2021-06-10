@@ -1,16 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Image from 'next/image';
+import { connect } from 'react-redux';
+import { toggleNavigation } from '../../../redux/actions';
 import styles from '../../../styles/MyHeader.module.scss';
 
-export default function MyHeader({ toggleNav }) {
-  const toggleNavigation = () => {
-    toggleNav();
+function MyHeader(props) {
+  const handleToggleNavigation = () => {
+    // eslint-disable-next-line react/prop-types
+    props.toggleNavigation();
   };
-
   return (
     <div className={styles.single}>
-      <button type="button" className={styles.circle} onClick={toggleNavigation}>
+      <button type="button" className={styles.circle} onClick={handleToggleNavigation}>
         <Image className={styles.logo} src="/images/dsc_logo.png" alt="DSC logo" layout="intrinsic" width={55} height={35} />
       </button>
       <div className={styles.club_name}>
@@ -21,6 +22,4 @@ export default function MyHeader({ toggleNav }) {
   );
 }
 
-MyHeader.propTypes = {
-  toggleNav: PropTypes.func.isRequired,
-};
+export default connect(null, { toggleNavigation })(MyHeader);

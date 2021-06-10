@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from '../../../styles/NavGroup.module.scss';
 import { NavItem } from './NavItem';
 import navItems from '../../../constants/navItems';
 
-export default function NavGroup({ isNavShowing }) {
+// eslint-disable-next-line react/prop-types
+function NavGroup({ isNavOpen }) {
   return (
-    <div className={isNavShowing ? styles.nav_group : styles.nav_group__invisible}>
+    <div className={isNavOpen ? styles.nav_group : styles.nav_group__invisible}>
       {navItems.map((item) => (
         <NavItem
           key={item.icon}
@@ -20,6 +21,8 @@ export default function NavGroup({ isNavShowing }) {
   );
 }
 
-NavGroup.propTypes = {
-  isNavShowing: PropTypes.bool.isRequired,
-};
+const mapStateToProps = (state) => ({
+  isNavOpen: state.nav.isNavOpen,
+});
+
+export default connect(mapStateToProps)(NavGroup);

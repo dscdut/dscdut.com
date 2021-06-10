@@ -10,7 +10,7 @@ import HomeMainCarousel from './HomeMainCarousel';
 import MyButton from '../../common/Button/MyButton';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
-export default function HomeMain({ toggleNav, coverRef }) {
+export default function HomeMain({ coverRef }) {
   const variants = {
     hidden: {
       scale: 0.8,
@@ -39,10 +39,6 @@ export default function HomeMain({ toggleNav, coverRef }) {
 
   const coverMobileRef = useRef();
 
-  const toggleNavigation = () => {
-    toggleNav();
-  };
-
   const renderSplide = coverImages.map((image) => (
     <SplideSlide key={image}>
       <Image
@@ -60,7 +56,7 @@ export default function HomeMain({ toggleNav, coverRef }) {
   return (
     <motion.div initial="hidden" animate="visible" variants={variants} className={styles.single}>
       <div className={styles.content}>
-        <MyHeader toggleNav={toggleNavigation} />
+        <MyHeader />
         <div className={styles.img_container}>
           <Splide options={splideOptions} ref={coverMobileRef}>
             {renderSplide}

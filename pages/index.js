@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import styles from '../styles/Home.module.scss';
@@ -9,12 +9,7 @@ import NavGroup from '../components/common/Navbar/NavGroup';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
 export default function Home() {
-  const [isNavShowing, setIsNavShowing] = useState(false);
   const coverRef = useRef();
-
-  const toggleNavigation = () => {
-    setIsNavShowing(!isNavShowing);
-  };
 
   const options = {
     type: 'fade',
@@ -51,9 +46,9 @@ export default function Home() {
           </Splide>
         </div>
 
-        <HomeMain toggleNav={toggleNavigation} coverRef={coverRef} />
+        <HomeMain coverRef={coverRef} />
       </div>
-      <NavGroup isNavShowing={isNavShowing} />
+      <NavGroup />
     </>
   );
 }

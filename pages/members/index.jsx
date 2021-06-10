@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import MyHead from '../../components/common/Head/MyHead';
 import MembersBackground from '../../components/uncommon/Members/MembersBackground';
@@ -16,25 +16,17 @@ export const getStaticProps = async () => {
   };
 };
 
-const Members = ({ members }) => {
-  const [isNavShowing, setIsNavShowing] = useState(false);
-
-  const toggleNavigation = () => {
-    setIsNavShowing(!isNavShowing);
-  };
-
-  return (
-    <div className={styles.single}>
-      <MyHead title="Our Members" />
-      <MembersBackground />
-      <div className={styles.title}>
-        <MyHeader toggleNav={toggleNavigation} />
-      </div>
-      <NavGroup isNavShowing={isNavShowing} />
-      <MembersCarouselWithThumbnails members={members} />
+const Members = ({ members }) => (
+  <div className={styles.single}>
+    <MyHead title="Our Members" />
+    <MembersBackground />
+    <div className={styles.title}>
+      <MyHeader />
     </div>
-  );
-};
+    <NavGroup />
+    <MembersCarouselWithThumbnails members={members} />
+  </div>
+);
 
 Members.propTypes = {
   members: PropTypes.arrayOf(PropTypes.shape({
