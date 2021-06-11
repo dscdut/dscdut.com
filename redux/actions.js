@@ -9,5 +9,5 @@ export const toggleNavigation = () => ({
 
 export const openMemberInfo = (id) => ({
   type: OPEN_MEMBER_INFO,
-  payload: id,
+  payload: { id },
 });

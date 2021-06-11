@@ -24,7 +24,7 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
     interval: 3000,
     pauseOnHover: true,
     arrows: false,
-    start: parseInt(memberId, 10) - 1,
+    start: memberId - 1,
     breakpoints: {
       600: {
         fixedWidth: '100vw',
@@ -45,6 +45,7 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
     pagination: false,
     cover: true,
     perPage: 10,
+    start: memberId - 1,
   };
 
   const primaryRef = useRef();
@@ -54,18 +55,14 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
     primaryRef.current.sync(secondaryRef.current.splide);
   }, []);
 
-  const handleOpenMemberInfo = (id) => {
-    openMemberInfo(id);
-  };
-
   const renderPrimarySlides = members.map((member) => (
     <SplideSlide className={styles.member_container} key={member.id}>
       <div className={styles.info}>
         <h1 className={styles.name}>{ member.name }</h1>
-        <p className={styles.department}>{ member.department }</p>
+        <p className={styles.department}>{ member.role }</p>
         <Link href={`/members/${member.id}`}>
-          <a href={`/members/${member.id}`}>
-            <MyButton content="Know more" type="primary" onClick={handleOpenMemberInfo(member.id)} />
+          <a href={`/members/${member.id}`} onClick={() => openMemberInfo(member.id)}>
+            <MyButton content="Know more" type="primary" />
           </a>
         </Link>
       </div>
@@ -76,6 +73,7 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
           alt={member.name}
           width={400}
           height={600}
+          quality={100}
         />
       </div>
     </SplideSlide>
@@ -84,7 +82,16 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
   const renderSecondarySlides = members.map((member) => (
     <SplideSlide className={styles.secondary_container} key={member.id}>
       <Tooltip placement="top" title={member.name}>
-        <Image className={styles.secondary_img} src={`${ImageUrl.IMAGE_THUMBNAIL_URL}/${member.avatar}`} alt={member.name} width={120} height={120} objectFit="cover" layout="intrinsic" />
+        <Image
+          className={styles.secondary_img}
+          src={`${ImageUrl.IMAGE_THUMBNAIL_URL}/${member.avatar}`}
+          alt={member.name}
+          width={120}
+          height={120}
+          objectFit="cover"
+          layout="intrinsic"
+          quality={100}
+        />
       </Tooltip>
     </SplideSlide>
   ));
@@ -107,7 +114,7 @@ MembersCarouselWithThumbnails.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    department: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
   })).isRequired,
 };
 

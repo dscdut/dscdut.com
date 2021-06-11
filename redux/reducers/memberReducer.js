@@ -6,8 +6,10 @@ export const initialState = {
 
 export default function memberReducer(state = initialState, action) {
   switch (action.type) {
-    case actions.OPEN_MEMBER_INFO:
-      return { memberId: action.payload };
+    case actions.OPEN_MEMBER_INFO: {
+      const { id } = action.payload;
+      return { memberId: id };
+    }
     default:
       return state;
   }

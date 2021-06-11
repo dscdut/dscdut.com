@@ -10,8 +10,8 @@ import '../styles/customTooltip.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next';
 import store from '../redux/store';
-import useTransitionFix from '../helpers/useTransitionFix';
-import useImageFadeInTransition from '../helpers/useImageFadeInTransition';
+import useTransitionFix from '../hooks/useTransitionFix';
+import applyImageFadeInTransition from '../helpers/applyImageFadeInTransition';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
   const transitionCallback = useTransitionFix();
 
   useEffect(() => {
-    setTimeout(useImageFadeInTransition, 500);
+    setTimeout(applyImageFadeInTransition, 500);
   });
 
   const PAGE_VARIANTS = {

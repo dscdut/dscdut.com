@@ -1,3 +1,5 @@
+/* eslint-disable no-script-url */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
@@ -47,11 +49,19 @@ const MemberDetails = ({ member }) => (
     <NavGroup />
     <div className={styles.info}>
       <div className={styles.img_container}>
-        <Image className={styles.img} src={`${ImageUrl.IMAGE_BIG_URL}/${member.avatar}`} width={360} height={540} layout="intrinsic" object-fit="cover" />
+        <Image
+          className={styles.img}
+          src={`${ImageUrl.IMAGE_BIG_URL}/${member.avatar}`}
+          width={360}
+          height={540}
+          layout="intrinsic"
+          object-fit="cover"
+          quality={100}
+        />
       </div>
       <div className={styles.content}>
         <h1 className={styles.name}>{member.name}</h1>
-        <p className={styles.department}>{member.department}</p>
+        <p className={styles.department}>{member.role}</p>
         <div className={styles.biography}>
           <ReactMarkdown>{member.biography}</ReactMarkdown>
         </div>
@@ -61,8 +71,8 @@ const MemberDetails = ({ member }) => (
               <MyButton content="Contact me" type="primary" />
             </a>
           </Link>
-          <Link href="/members">
-            <a href="/members">
+          <Link href="javascript:history.back()">
+            <a href="javascript:history.back()">
               <MyButton content="Close" type="default" />
             </a>
           </Link>
@@ -76,7 +86,7 @@ MemberDetails.propTypes = {
   member: PropTypes.shape({
     name: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    department: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
     contact: PropTypes.string.isRequired,
     biography: PropTypes.string.isRequired,
   }).isRequired,

@@ -8,7 +8,7 @@ import MembersCarouselWithThumbnails from '../../components/uncommon/Members/Mem
 import styles from '../../styles/Members.module.scss';
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/members`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/dscdut`);
   const data = await res.json();
 
   return {
@@ -33,7 +33,7 @@ Members.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    department: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
   })).isRequired,
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Card } from 'antd';
@@ -14,23 +15,23 @@ import styles from '../../styles/OurTeam.module.scss';
 const { Meta } = Card;
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/ourteam`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/dscdut`);
   const data = await res.json();
 
-  // const departments = new Set();
-  // data.forEach((member) => departments.add(member.department));
+  const departments = new Set();
+  data.forEach((member) => departments.add(member.department));
 
-  // const result = [];
-  // departments.forEach((department) => {
-  //   const group = data.filter((member) => member.department === department);
-  //   result.push({
-  //     department,
-  //     group,
-  //   });
-  // });
+  const result = [];
+  departments.forEach((department) => {
+    const group = data.filter((member) => member.department === department);
+    result.push({
+      department,
+      group,
+    });
+  });
 
   return {
-    props: { team: data },
+    props: { team: result },
   };
 };
 
@@ -52,18 +53,23 @@ const OurTeam = ({ team }) => {
       width={300}
       alt={member.name}
       src={`${ImageUrl.IMAGE_MEDIUM_URL}/${member.avatar}`}
+      quality={100}
     />
   );
 
   const renderTeam = team.map((group) => (
-    <div key={group.id} className={styles.group_container}>
-      <h1 className={styles.group_name}>{group.name.toUpperCase()}</h1>
+    <div key={group.department} className={styles.group_container}>
+      <h1 className={styles.group_name}>{group.department.toUpperCase()}</h1>
       <div className={styles.group_members}>
         {group.group.map((member) => (
-          <motion.div key={member.name} whileHover={hoverMotion}>
-            <Card className={styles.card} cover={renderCard(member)}>
-              <Meta className={styles.meta} title={member.role} description={member.name} />
-            </Card>
+          <motion.div key={member.fullName} whileHover={hoverMotion}>
+            <Link href={`/members/${member.id}`}>
+              <a className={styles.group_member} href={`/members/${member.id}`}>
+                <Card className={styles.card} cover={renderCard(member)}>
+                  <Meta className={styles.meta} title={member.role} description={member.fullName} />
+                </Card>
+              </a>
+            </Link>
           </motion.div>
         ))}
       </div>
@@ -102,11 +108,10 @@ const OurTeam = ({ team }) => {
 
 OurTeam.propTypes = {
   team: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    department: PropTypes.string.isRequired,
     group: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
+      fullName: PropTypes.string.isRequired,
       role: PropTypes.string.isRequired,
       avatar: PropTypes.string.isRequired,
     })),

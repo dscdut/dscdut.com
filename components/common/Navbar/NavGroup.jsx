@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styles from '../../../styles/NavGroup.module.scss';
-import { NavItem } from './NavItem';
+import NavItem from './NavItem';
 import navItems from '../../../constants/navItems';
 
 // eslint-disable-next-line react/prop-types

@@ -14,7 +14,7 @@ const isInViewport = (el) => {
   );
 };
 
-const useImageFadeInTransition = () => {
+const applyImageFadeInTransition = () => {
   let images = [];
   images = document.querySelectorAll('img:not([role="presentation"])');
   // eslint-disable-next-line prefer-const
@@ -27,4 +27,4 @@ const useImageFadeInTransition = () => {
   }
 };
 
-export default useImageFadeInTransition;
+export default applyImageFadeInTransition;
