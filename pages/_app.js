@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import '../styles/globals.scss';
+import 'material-icons/iconfont/material-icons.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import { Provider } from 'react-redux';

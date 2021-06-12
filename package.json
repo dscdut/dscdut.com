@@ -12,6 +12,7 @@
     "antd": "^4.15.0",
     "framer-motion": "^4.1.11",
     "interweave": "^12.7.2",
+    "material-icons": "^0.7.2",
     "next": "^10.0.9",
     "next-i18next": "^8.3.0",
     "nprogress": "^0.2.0",

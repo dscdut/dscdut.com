@@ -10,6 +10,7 @@ import MyButton from '../../components/common/Button/MyButton';
 import NavGroup from '../../components/common/Navbar/NavGroup';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import MyHeader from '../../components/common/Header/MyHeader';
+import MembersBackground from '../../components/uncommon/Members/MembersBackground';
 import ImageUrl from '../../constants/imageUrl';
 import styles from '../../styles/MemberDetails.module.scss';
 import { data } from '../../services/mockApi/db';
@@ -42,6 +43,7 @@ export const getStaticProps = async (context) => {
 const MemberDetails = ({ member }) => (
   <div className={styles.single}>
     <MyHead title={`${member.name} | Profile`} />
+    <MembersBackground />
     <div className={styles.title}>
       <MyHeader />
       <SearchBar />

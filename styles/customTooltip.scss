@@ -84,7 +84,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.ant-tooltip, .ant-tooltip-inner, .ant-tooltip-placement-top .ant-tooltip-arrow{
+	.ant-tooltip, .ant-tooltip-inner, .ant-tooltip-placement-top .ant-tooltip-arrow, .ant-tooltip-placement-right .ant-tooltip-arrow {
     display: none;
   }
 }
