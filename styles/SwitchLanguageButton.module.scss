@@ -1,0 +1,27 @@
+.single {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 3px 6px 10px rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 6;
+}
+
+.flag {
+	border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+	.single {
+		width: 40px;
+		height: 40px;
+		bottom: 20px;
+  	left: 20px;
+	}
+}

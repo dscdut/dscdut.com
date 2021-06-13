@@ -1,6 +1,6 @@
 .nav_group {
 	width: 60px;
-	height: 300px;
+	height: 380px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -12,7 +12,7 @@
 }
 .nav_group__invisible {
 	width: 60px;
-	height: 300px;
+	height: 380px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -38,12 +38,12 @@
 	.nav_group {
 		visibility: visible;
 		width: 40px;
-		height: 220px;
+		height: 260px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		position: fixed;
-		top: 200px;
+		top: 220px;
 		margin-left: 20px;
 		z-index: 2;
 		transition-duration: 0.3s;

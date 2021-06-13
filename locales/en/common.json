@@ -1,4 +1,17 @@
 {
-  "button": "Find out more",
-  "title": "DSC-DUT | Home"
+  "button-more": "Find out more",
+  "button-member-more": "Know more",
+  "button-contact": "Contact me",
+  "button-close": "Close",
+  "switch-lang": "Chuyển sang Tiếng Việt",
+  "title-home": "DSC-DUT | Home",
+  "title-members": "DSC-DUT | Members",
+  "title-ourteam": "DSC-DUT | Our Team",
+  "title-profile": "Profile",
+  "search-placeholder": "Search",
+  "nav-home": "Home",
+  "nav-members": "Our members",
+  "nav-products": "Our products",
+  "nav-events": "Our events",
+  "nav-facebook": "Our Facebook page"
 }

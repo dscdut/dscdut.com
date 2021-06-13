@@ -12,6 +12,12 @@ const navItems = [
     link: '/members',
   },
   {
+    color: '#707070',
+    icon: 'widgets',
+    tooltip: 'Our products',
+    link: '/products',
+  },
+  {
     color: '#EA4335',
     icon: 'event_available',
     tooltip: 'Our events',
@@ -20,7 +26,7 @@ const navItems = [
   {
     color: '#4285F4',
     icon: 'facebook',
-    tooltip: 'Our Facebook page',
+    tooltip: 'Our facebook page',
     link: 'https://fb.com/dscdut',
   },
 ];

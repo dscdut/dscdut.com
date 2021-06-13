@@ -1,4 +1,17 @@
 {
-  "button": "Tìm hiểu thêm",
-  "title": "DSC-DUT | Trang chủ"
+  "button-more": "Tìm hiểu thêm",
+  "button-member-more": "Tìm hiểu thêm",
+  "button-contact": "Liên hệ",
+  "button-close": "Đóng",
+  "switch-lang": "Switch to English",
+  "title-home": "DSC-DUT | Trang chủ",
+  "title-members": "DSC-DUT | Thành viên",
+  "title-ourteam": "DSC-DUT | Nhóm của chúng tôi",
+  "title-profile": "Trang cá nhân",
+  "search-placeholder": "Tìm kiếm",
+  "nav-home": "Trang chủ",
+  "nav-members": "Các thành viên",
+  "nav-products": "Sản phẩm",
+  "nav-events": "Sự kiện",
+  "nav-facebook": "Trang Facebook của chúng tôi"
 }
