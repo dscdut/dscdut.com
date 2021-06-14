@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/globals.scss';
 import 'material-icons/iconfont/material-icons.css';
 import Router from 'next/router';
@@ -11,6 +11,7 @@ import 'nprogress/nprogress.css';
 import '../styles/customTooltip.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next';
+import Loader from '../components/common/Loader/Loader';
 import store from '../redux/store';
 import useTransitionFix from '../hooks/useTransitionFix';
 import applyImageFadeInTransition from '../helpers/applyImageFadeInTransition';
@@ -59,12 +60,30 @@ function MyApp({ Component, pageProps, router }) {
     },
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => setIsLoading(true));
+    router.events.on('routeChangeComplete', () => setIsLoading(false));
+
+    return () => {
+      router.events.off('routeChangeStart', () => setIsLoading(true));
+      router.events.off('routeChangeComplete', () => setIsLoading(false));
+    };
+  }, [router.events]);
+
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <AnimatePresence exitBeforeEnter onExitComplete={transitionCallback}>
       <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={PAGE_VARIANTS}>
         <Provider store={store}>
-          <Component {...pageProps} />
+          { isLoading
+            ? (
+              <div className="loader">
+                <Loader />
+              </div>
+            )
+            : <Component {...pageProps} /> }
         </Provider>
       </motion.div>
     </AnimatePresence>
