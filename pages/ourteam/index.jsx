@@ -15,9 +15,16 @@ import styles from '../../styles/OurTeam.module.scss';
 const { Meta } = Card;
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/dscdut`);
-  const data = await res.json();
-
+  let data = null;
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/dscdut`);
+    data = await res.json();
+  } catch (err) {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.error(err);
+    }
+  }
   const departments = new Set();
   data.forEach((member) => departments.add(member.department));
 

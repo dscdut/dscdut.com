@@ -9,13 +9,21 @@ import NavGroup from '../../components/common/Navbar/NavGroup';
 import MyHeader from '../../components/common/Header/MyHeader';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import Footer from '../../components/common/Footer/Footer';
-import productsList from '../../constants/products';
 import styles from '../../styles/Products.module.scss';
 
 const { Meta } = Card;
 
 export const getStaticProps = async () => {
-  const data = productsList;
+  let data = null;
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
+    data = await res.json();
+  } catch (err) {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.error(err);
+    }
+  }
   return {
     props: { products: data },
   };

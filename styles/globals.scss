@@ -74,6 +74,13 @@ button {
 	background: #00000000 !important;
 	font-size: 1.1em;
 }
+.disabled-link {
+  pointer-events: none;
+	cursor: not-allowed;
+}
+.link {
+  pointer-events: auto;
+}
 ::-webkit-scrollbar {
 	width: 6px;
 }
