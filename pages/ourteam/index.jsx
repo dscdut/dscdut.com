@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Card } from 'antd';
 import { motion } from 'framer-motion';
-import MyHead from '../../components/common/Head/MyHead';
-import NavGroup from '../../components/common/Navbar/NavGroup';
-import MyHeader from '../../components/common/Header/MyHeader';
-import SearchBar from '../../components/common/SearchBar/SearchBar';
-import Footer from '../../components/common/Footer/Footer';
+import PageLayout from '../../layout/PageLayout';
 import ImageUrl from '../../constants/imageUrl';
 import styles from '../../styles/OurTeam.module.scss';
 
@@ -84,14 +80,7 @@ const OurTeam = ({ team }) => {
   ));
 
   return (
-    <div className={styles.single}>
-      <MyHead title="Our Team" />
-      <div className={styles.title}>
-        <MyHeader />
-        <SearchBar />
-      </div>
-      <NavGroup />
-
+    <PageLayout headTitle="DSC-DUT | Our team" hasFooter>
       <div className={styles.cover}>
         <Image
           className={styles.coverImg}
@@ -107,9 +96,7 @@ const OurTeam = ({ team }) => {
       <div className={styles.team}>
         {renderTeam}
       </div>
-      <Footer />
-    </div>
-
+    </PageLayout>
   );
 };
 

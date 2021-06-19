@@ -1,11 +1,13 @@
 /* eslint-disable no-restricted-syntax */
+const EXTRA_OFFSET = 300;
+
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
   const { clientHeight, clientWidth } = document.documentElement;
-  const rectHeightOffset = rect.bottom - rect.top;
-  const rectWidthOffset = rect.right - rect.left;
+  const rectHeightOffset = rect.bottom - rect.top + EXTRA_OFFSET;
+  const rectWidthOffset = rect.right - rect.left + EXTRA_OFFSET;
   return (
     rect.top >= 0 - rectHeightOffset
     && rect.left >= 0 - rectWidthOffset

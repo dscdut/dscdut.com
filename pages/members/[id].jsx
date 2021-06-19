@@ -5,11 +5,8 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import MyHead from '../../components/common/Head/MyHead';
+import PageLayout from '../../layout/PageLayout';
 import MyButton from '../../components/common/Button/MyButton';
-import NavGroup from '../../components/common/Navbar/NavGroup';
-import SearchBar from '../../components/common/SearchBar/SearchBar';
-import MyHeader from '../../components/common/Header/MyHeader';
 import MembersBackground from '../../components/uncommon/Members/MembersBackground';
 import ImageUrl from '../../constants/imageUrl';
 import styles from '../../styles/MemberDetails.module.scss';
@@ -41,14 +38,8 @@ export const getStaticProps = async (context) => {
 };
 
 const MemberDetails = ({ member }) => (
-  <div className={styles.single}>
-    <MyHead title={`${member.name} | Profile`} />
+  <PageLayout headTitle={`${member.name} | Profile`} hasFooter={false}>
     <MembersBackground />
-    <div className={styles.title}>
-      <MyHeader />
-      <SearchBar />
-    </div>
-    <NavGroup />
     <div className={styles.info}>
       <div className={styles.img_container}>
         <Image
@@ -81,7 +72,7 @@ const MemberDetails = ({ member }) => (
         </div>
       </div>
     </div>
-  </div>
+  </PageLayout>
 );
 
 MemberDetails.propTypes = {

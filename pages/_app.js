@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import 'nprogress/nprogress.css';
 import '../styles/customTooltip.scss';
 import { motion, AnimatePresence } from 'framer-motion';
+// eslint-disable-next-line no-unused-vars
 import { appWithTranslation } from 'next-i18next';
 import Loader from '../components/common/Loader/Loader';
 import store from '../redux/store';
@@ -23,6 +24,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 // eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps, router }) {
   const transitionCallback = useTransitionFix();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleVisibilityChange = (hiddenType) => {
     if (!hiddenType) {
@@ -60,12 +62,9 @@ function MyApp({ Component, pageProps, router }) {
     },
   };
 
-  const [isLoading, setIsLoading] = useState(false);
-
   useEffect(() => {
     router.events.on('routeChangeStart', () => setIsLoading(true));
     router.events.on('routeChangeComplete', () => setIsLoading(false));
-
     return () => {
       router.events.off('routeChangeStart', () => setIsLoading(true));
       router.events.off('routeChangeComplete', () => setIsLoading(false));
@@ -83,11 +82,12 @@ function MyApp({ Component, pageProps, router }) {
                 <Loader />
               </div>
             )
-            : <Component {...pageProps} /> }
+            : null }
+          <Component {...pageProps} />
         </Provider>
       </motion.div>
     </AnimatePresence>
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;

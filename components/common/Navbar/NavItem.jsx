@@ -16,7 +16,7 @@ function NavItem({color, icon, tooltip, link, openMemberInfo}) {
   };
   
   return (
-    <Link href={link} scroll={false}>
+    <Link href={link}>
       <Tooltip className="tooltip" placement="right" title={tooltip}>
         <button className={`${styles.single} ${router.pathname === link ? 'disabled-link' : 'link'}`} style={{backgroundColor:`${color}`}} onClick={() => handleOpenMemberInfo("1")}>
           <span className="material-icons">

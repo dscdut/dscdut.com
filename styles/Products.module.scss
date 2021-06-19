@@ -1,15 +1,3 @@
-.single {
-	width: 100%;
-	height: 100vh;
-	background-color: #fff;
-}
-.title {
-	padding: 24px;
-	margin-bottom: -50px;
-	display: flex;
-	justify-content: space-between;
-	margin-right: 50px;
-}
 .cover {
 	display: block;
 	text-align: center;
@@ -71,17 +59,5 @@
 				}
 			}
 		}
-	}
-}
-@media only screen and (max-width: 600px) {
-	.single {
-		width: 100%;
-		height: 100vh;
-		background-color: #fff;
-	}
-	.title {
-		padding: 0px;
-		display: block;
-		margin: 0px;
 	}
 }

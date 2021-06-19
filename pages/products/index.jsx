@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { Card } from 'antd';
 import { motion } from 'framer-motion';
-import MyHead from '../../components/common/Head/MyHead';
-import NavGroup from '../../components/common/Navbar/NavGroup';
-import MyHeader from '../../components/common/Header/MyHeader';
-import SearchBar from '../../components/common/SearchBar/SearchBar';
-import Footer from '../../components/common/Footer/Footer';
+import PageLayout from '../../layout/PageLayout';
 import styles from '../../styles/Products.module.scss';
 
 const { Meta } = Card;
@@ -64,23 +60,17 @@ const Products = ({ products }) => {
   ));
 
   return (
-    <div className={styles.single}>
-      <MyHead title="Our Products" />
-      <div className={styles.title}>
-        <MyHeader />
-        <SearchBar />
-      </div>
-      <NavGroup />
-
+    <PageLayout headTitle="DSC-DUT | Products" hasFooter>
       <div className={styles.cover}>
         <Image
           className={styles.coverImg}
-          alt="Out team cover image"
-          src="/images/ourteam_cover.svg"
-          width={1120}
-          height={480}
+          alt="Products cover image"
+          src="/images/products_cover.svg"
+          width={1200}
+          height={360}
           layout="intrinsic"
           objectFit="cover"
+          quality={100}
           loading="lazy"
         />
       </div>
@@ -92,9 +82,7 @@ const Products = ({ products }) => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
-
+    </PageLayout>
   );
 };
 

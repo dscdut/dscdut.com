@@ -50,6 +50,7 @@ export default function Footer() {
           width={500}
           height={150}
           layout="intrinsic"
+          quality={100}
         />
       </div>
     </div>
