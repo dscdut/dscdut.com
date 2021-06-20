@@ -40,35 +40,37 @@ export const getStaticProps = async (context) => {
 const MemberDetails = ({ member }) => (
   <PageLayout headTitle={`${member.name} | Profile`} hasFooter={false}>
     <MembersBackground />
-    <div className={styles.info}>
-      <div className={styles.img_container}>
-        <Image
-          className={styles.img}
-          src={`${ImageUrl.IMAGE_BIG_URL}/${member.avatar}`}
-          width={360}
-          height={540}
-          layout="intrinsic"
-          object-fit="cover"
-          quality={100}
-        />
-      </div>
-      <div className={styles.content}>
-        <h1 className={styles.name}>{member.name}</h1>
-        <p className={styles.department}>{member.role}</p>
-        <div className={styles.biography}>
-          <ReactMarkdown>{member.biography}</ReactMarkdown>
+    <div className={styles.container}>
+      <div className={styles.info}>
+        <div className={styles.img_container}>
+          <Image
+            className={styles.img}
+            src={`${ImageUrl.IMAGE_BIG_URL}/${member.avatar}`}
+            width={360}
+            height={540}
+            layout="intrinsic"
+            object-fit="cover"
+            quality={100}
+          />
         </div>
-        <div className={styles.btn_group}>
-          <Link href={member.contact}>
-            <a href={member.contact}>
-              <MyButton content="Contact me" type="primary" />
-            </a>
-          </Link>
-          <Link href="javascript:history.back()">
-            <a href="javascript:history.back()">
-              <MyButton content="Close" type="default" />
-            </a>
-          </Link>
+        <div className={styles.content}>
+          <h1 className={styles.name}>{member.name}</h1>
+          <p className={styles.department}>{member.role}</p>
+          <div className={styles.biography}>
+            <ReactMarkdown>{member.biography}</ReactMarkdown>
+          </div>
+          <div className={styles.btn_group}>
+            <Link href={member.contact}>
+              <a href={member.contact}>
+                <MyButton content="Contact me" type="primary" />
+              </a>
+            </Link>
+            <Link href="javascript:history.back()">
+              <a href="javascript:history.back()">
+                <MyButton content="Close" type="default" />
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

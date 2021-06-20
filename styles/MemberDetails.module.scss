@@ -1,7 +1,11 @@
+.container{
+	display: flex;
+	height: 80vh;
+	align-items: center;
+}
 .info {
 	display: flex;
 	justify-content: space-around;
-	flex-direction: row;
 	padding: 0px 150px 50px 150px;
 	margin: 20px 0px;
 }
@@ -12,7 +16,7 @@
 }
 .content {
 	width: 70%;
-	padding: 0px 50px;
+	padding-left: 50px;
 }
 .name {
 	font-size: 50px;
@@ -37,7 +41,9 @@
 	justify-content: space-between;
 }
 @media only screen and (max-width: 1024px) {
-	
+	.container{
+		display: block;
+	}
 	.info {
 		display: block;
 		padding: 0px 20px;
@@ -63,7 +69,7 @@
 		margin-bottom: 40px;
 	}
 	.biography {
-		height: 280px;
+		height: 340px;
 		width: 80%;
 		margin: 50px 10%;
 		text-align: left;
