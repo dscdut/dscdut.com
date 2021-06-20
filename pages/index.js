@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
 import styles from '../styles/Home.module.scss';
 import MyHead from '../components/common/Head/MyHead';
@@ -10,6 +11,7 @@ import NavGroup from '../components/common/Navbar/NavGroup';
 import 'splide-nextjs/splide/dist/css/themes/splide-default.min.css';
 
 export default function Home() {
+  const router = useRouter();
   const coverRef = useRef();
 
   const options = {
@@ -39,7 +41,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <MyHead title="DSC-DUT | Home" />
+        <MyHead title="DSC-DUT | Home" pathName={router.asPath} />
         <HomeBackground />
         <div className={styles.background}>
           <Splide className={styles.wrapper} options={options} ref={coverRef}>
