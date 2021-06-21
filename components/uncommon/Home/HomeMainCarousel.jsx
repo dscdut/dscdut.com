@@ -28,6 +28,7 @@ export default function HomeMainCarousel({ coverRef, coverMobileRef }) {
       600: {
         arrows: false,
         drag: true,
+        pagination: true,
       },
     },
   };

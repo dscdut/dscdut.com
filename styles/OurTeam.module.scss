@@ -45,7 +45,6 @@
 	flex-direction: column;
 	justify-content: space-between;
 	text-transform: uppercase;
-	letter-spacing: 1px;
 	> *{
 		&:only-child {
 			> *{
@@ -56,6 +55,7 @@
 				}
 				&:nth-child(2) {
 					font-size: 18px;
+					letter-spacing: 0.5px;
 				}
 			}
 		}

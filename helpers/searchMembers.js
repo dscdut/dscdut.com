@@ -3,9 +3,12 @@ import convertToNonAccentVietnamese from './convertToNonAccentVietnamese';
 
 export default async function searchMembers(string) {
   const members = await getMembers();
-  const data = convertToNonAccentVietnamese(string).toLowerCase();
-  const filteredMembers = members.filter(
-    (member) => member.name.toLowerCase().includes(data),
-  );
+  let filteredMembers = [];
+  if (string.trim() !== '') {
+    const data = convertToNonAccentVietnamese(string).toLowerCase();
+    filteredMembers = members.filter(
+      (member) => member.name.toLowerCase().includes(data),
+    );
+  }
   return filteredMembers;
 }

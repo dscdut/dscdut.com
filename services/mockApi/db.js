@@ -32,7 +32,7 @@ export const data = [
   },
   {
     id: '4',
-    name: 'Lien Huong Le',
+    name: 'Huong Le',
     fullName: 'Le Lien Huong',
     role: 'Frontend',
     department: 'Technical Team',
@@ -52,7 +52,7 @@ export const data = [
   },
   {
     id: '6',
-    name: 'Thao Hang Nguyen',
+    name: 'Hang Nguyen',
     fullName: 'Nguyen Thi Thao Hang',
     role: 'Media',
     department: 'Marketing',
@@ -72,7 +72,7 @@ export const data = [
   },
   {
     id: '8',
-    name: 'Khanh Linh Nguyen',
+    name: 'Linh Nguyen',
     fullName: 'Nguyen Dinh Khanh Linh',
     role: 'Design',
     department: 'Marketing',
@@ -122,7 +122,7 @@ export const data = [
   },
   {
     id: '13',
-    name: 'Viet Trung Le',
+    name: 'Trung Le',
     fullName: 'Le Viet Trung',
     role: 'Machine Learning',
     department: 'Technical Team',
@@ -162,7 +162,7 @@ export const data = [
   },
   {
     id: '17',
-    name: 'Nhan Duc Le',
+    name: 'Duc Le',
     fullName: 'Le Vinh Nhan Duc',
     role: 'Mobile',
     department: 'Technical Team',
@@ -212,7 +212,7 @@ export const data = [
   },
   {
     id: '22',
-    name: 'Khanh Linh Huynh',
+    name: 'Linh Huynh',
     fullName: 'Huynh Thi Khanh Linh',
     role: 'Frontend',
     department: 'Technical Team',
@@ -232,7 +232,7 @@ export const data = [
   },
   {
     id: '24',
-    name: 'Thanh Lam Pham',
+    name: 'Lam Pham',
     fullName: 'Pham Tran Thanh Lam',
     role: 'Event',
     department: 'Event',
@@ -302,7 +302,7 @@ export const data = [
   },
   {
     id: '31',
-    name: 'Thao Mien Ho',
+    name: 'Mien Ho',
     fullName: 'Ho Nhat Thao Mien',
     role: 'Event',
     department: 'Event',
