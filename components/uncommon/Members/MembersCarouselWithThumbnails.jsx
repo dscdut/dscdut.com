@@ -52,7 +52,7 @@ function MembersCarouselWithThumbnails({ members, openMemberInfo, memberId }) {
   const secondaryRef = useRef();
 
   useEffect(() => {
-    primaryRef.current.sync(secondaryRef.current.splide);
+    setTimeout(() => primaryRef.current.sync(secondaryRef.current.splide), 0);
   }, []);
 
   const renderPrimarySlides = members.map((member) => (
