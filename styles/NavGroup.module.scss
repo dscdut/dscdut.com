@@ -1,6 +1,6 @@
 .nav_group {
 	width: 60px;
-	height: 380px;
+	height: 320px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -12,7 +12,7 @@
 }
 .nav_group__invisible {
 	width: 60px;
-	height: 380px;
+	height: 320px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -21,6 +21,14 @@
 	margin-left: 30px;
 	transform: translateY(-50%);
 	top: 50%;
+}
+@media only screen and (max-width: 1024px) {
+	.nav_group {
+		height: 380px;
+	}
+	.nav_group__invisible {
+		height: 380px;
+	}
 }
 @media only screen and (max-width: 600px) {
 	.nav_group__invisible {

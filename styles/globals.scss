@@ -14,6 +14,18 @@
 	font-weight: bold;
 	font-style: normal;
 }
+:root {
+	--color-text-primary: #000000c2;
+	--color-text-secondary: #9F9F9F;
+	--color-gray: #707070;
+	--color-gray-75: #707070BF;
+	--color-light-gray: #F2F2F2;
+	--color-white: #FFFFFF;
+	--color-red: #EA4335;
+	--color-blue: #4285F4;
+	--color-yellow: #FBBC05;
+	--color-green: #34A853;
+}
 body {
 	padding: 0;
 	margin: 0;
@@ -30,7 +42,7 @@ body {
 	display: flex;
 }
 .loader {
-	background-color: #FFFFFF;
+	background-color: var(--color-white);
 	position: fixed;
 	z-index: 999;
 	width: 100vw;
@@ -126,7 +138,7 @@ button {
 	}
 }
 
-img:not([class='search-avatar']){
+img:not([class='search-avatar']) {
 	opacity: 0;
 	transition-duration: 500ms;
 }

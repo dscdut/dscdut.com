@@ -1,30 +1,30 @@
 const navItems = [
   {
-    color: '#0F9D58',
+    color: 'var(--color-gray)',
     icon: 'home',
     tooltip: 'Home',
     link: '/',
   },
   {
-    color: '#FBBC04',
+    color: 'var(--color-yellow)',
     icon: 'groups',
     tooltip: 'Our members',
     link: '/members',
   },
   {
-    color: '#707070',
+    color: 'var(--color-green)',
     icon: 'widgets',
     tooltip: 'Our products',
     link: '/products',
   },
   {
-    color: '#EA4335',
+    color: 'var(--color-red)',
     icon: 'event_available',
     tooltip: 'Our events',
     link: 'https://dsc.community.dev/da-nang-university-of-technology/',
   },
   {
-    color: '#4285F4',
+    color: 'var(--color-blue)',
     icon: 'facebook',
     tooltip: 'Our facebook page',
     link: 'https://fb.com/dscdut',
@@ -32,8 +32,3 @@ const navItems = [
 ];
 
 export default navItems;
-
-// #0F9D58 green
-// #EA4335 red
-// #4285F4 blue
-// #FBBC04 yellow

@@ -13,7 +13,7 @@
 	margin-top: 12px;
 	font-size: 24px;
 	font-weight: normal;
-	color: #9F9F9F;
+	color: var(--color-text-secondary);
 	text-align: left;
 	line-height: 1.6em;
 }
@@ -54,7 +54,6 @@
 		margin-top: 12px;
 		font-size: 14px;
 		font-weight: normal;
-		color: #9F9F9F;
 		text-align: left;
 	}
 }

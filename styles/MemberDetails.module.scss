@@ -5,6 +5,7 @@
 }
 .info {
 	display: flex;
+	width: 100%;
 	justify-content: space-around;
 	padding: 0px 150px 50px 150px;
 	margin: 20px 0px;
@@ -20,15 +21,19 @@
 }
 .name {
 	font-size: 50px;
+	color: var(--color-text-primary);
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
 .department {
 	font-size: 24px;
+	color: var(--color-text-primary);
 	margin-top: 0px;
 	margin-bottom: 40px;
 }
 .biography {
+	color: var(--color-text-primary);
+	font-size: 18px;
 	height: 340px;
 	margin-bottom: 20px;
 	overflow-y: scroll;

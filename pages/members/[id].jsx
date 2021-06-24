@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
@@ -8,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import PageLayout from '../../layout/PageLayout';
 import MyButton from '../../components/common/Button/MyButton';
 import MembersBackground from '../../components/uncommon/Members/MembersBackground';
+import getMemberContent from '../../helpers/getMemberContent';
 import ImageUrl from '../../constants/imageUrl';
 import styles from '../../styles/MemberDetails.module.scss';
 import { data } from '../../services/mockApi/db';
@@ -31,13 +33,13 @@ export const getStaticProps = async (context) => {
   //  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + 'members/' + id);
   //  const data = await res.json();
   const myData = data[id - 1];
-
+  const content = getMemberContent(myData.biography);
   return {
-    props: { member: myData },
+    props: { member: myData, content },
   };
 };
 
-const MemberDetails = ({ member }) => (
+const MemberDetails = ({ member, content }) => (
   <PageLayout headTitle={`${member.name} | Profile`} hasFooter={false}>
     <MembersBackground />
     <div className={styles.container}>
@@ -57,11 +59,11 @@ const MemberDetails = ({ member }) => (
           <h1 className={styles.name}>{member.name}</h1>
           <p className={styles.department}>{member.role}</p>
           <div className={styles.biography}>
-            <ReactMarkdown>{member.biography}</ReactMarkdown>
+            <ReactMarkdown>{content}</ReactMarkdown>
           </div>
           <div className={styles.btn_group}>
-            <Link href={member.contact}>
-              <a href={member.contact}>
+            <Link href={member.contact} target="_blank" rel="noreferrer">
+              <a href={member.contact} target="_blank" rel="noreferrer">
                 <MyButton content="Contact me" type="primary" />
               </a>
             </Link>
@@ -85,6 +87,7 @@ MemberDetails.propTypes = {
     contact: PropTypes.string.isRequired,
     biography: PropTypes.string.isRequired,
   }).isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default MemberDetails;
