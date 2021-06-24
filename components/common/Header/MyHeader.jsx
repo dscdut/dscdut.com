@@ -11,7 +11,7 @@ function MyHeader(props) {
   const router = useRouter();
   const { width } = useWindowDimensions();
   const handleToggleNavigation = (e) => {
-    if (width < 600) {
+    if (width <= 600) {
       e.preventDefault();
       // eslint-disable-next-line react/prop-types
       props.toggleNavigation();

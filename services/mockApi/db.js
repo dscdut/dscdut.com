@@ -7,7 +7,7 @@ export const data = [
     role: 'DSC Lead',
     department: 'DSC-DUT Lead',
     contact: 'https://www.linkedin.com/in/nguyen-y-nguyen-huu-472404185',
-    avatar: 'liglqz3iwjncdg26memt.png',
+    avatar: 'zso1cxfxtltdvnbt79yk.png',
     biography: './services/biography/01.md',
   },
   {
@@ -17,7 +17,7 @@ export const data = [
     role: 'Technical Lead',
     department: 'DSC-DUT Lead',
     contact: 'https://www.linkedin.com/in/phu-dang-ngoc-0865a4174',
-    avatar: 'qkrorhltulkyezri3wvy.png',
+    avatar: 'lnnuxcsd4c1yj7klquib.png',
     biography: './services/biography/02.md',
   },
   {
@@ -57,7 +57,7 @@ export const data = [
     role: 'Head of Business',
     department: 'DSC-DUT Lead',
     contact: 'https://www.linkedin.com/in/nhavy-pham-b215431a1',
-    avatar: 'ggprhzykga3uhzcwt6aa.png',
+    avatar: 'nvktg3xozydkqsm64tgj.png',
     biography: './services/biography/06.md',
   },
   {
@@ -67,7 +67,7 @@ export const data = [
     role: 'Head of Business',
     department: 'DSC-DUT Lead',
     contact: 'https://www.linkedin.com/in/vy-tran-b705551a1',
-    avatar: 'x37nucljqatculp5i7qc.png',
+    avatar: 'yaj593m6jhbqcx0awg5d.png',
     biography: './services/biography/07.md',
   },
   {
@@ -107,7 +107,7 @@ export const data = [
     role: 'Event',
     department: 'Event',
     contact: 'https://www.facebook.com/profile.php?id=100054740617787',
-    avatar: 'i5z3wul4juseigx6hjqs.png',
+    avatar: 'eotimn3gv6owxp24osaw.png',
     biography: './services/biography/11.md',
   },
   {
@@ -157,7 +157,7 @@ export const data = [
     role: 'Social Media',
     department: 'Marketing',
     contact: 'https://www.facebook.com/smile110400',
-    avatar: 'wcigp6mjehz2riedqvjt.png',
+    avatar: 'xstm0jy7hqa1xtmunvoj.png',
     biography: './services/biography/16.md',
   },
   {
@@ -167,7 +167,7 @@ export const data = [
     role: 'Social Media',
     department: 'Marketing',
     contact: 'https://www.facebook.com/duyentran.1199',
-    avatar: 'qyuhm3vonydiucq0juwc.png',
+    avatar: 'e3creqn56we3cai48rdv.png',
     biography: './services/biography/17.md',
   },
   {
@@ -177,7 +177,7 @@ export const data = [
     role: 'Social Media',
     department: 'Marketing',
     contact: 'https://www.facebook.com/viachaos',
-    avatar: 'efyo5boc7nzvjcwze6gc.png',
+    avatar: 'aqpwceqwaowp9bavqflk.png',
     biography: './services/biography/18.md',
   },
   {
@@ -207,7 +207,7 @@ export const data = [
     role: 'Frontend',
     department: 'Technical Team',
     contact: 'https://www.linkedin.com/in/lien-huong-le-336837129',
-    avatar: 'ag0oxahgjei3jxcrezd3.png',
+    avatar: 'ueo8wfycepayyljt5cec.png',
     biography: './services/biography/21.md',
   },
   {
@@ -287,7 +287,7 @@ export const data = [
     role: 'Mobile',
     department: 'Technical Team',
     contact: 'https://www.facebook.com/levinhnhanduc',
-    avatar: 'puls5naarpaibvfohm09.png',
+    avatar: 'jfgz8gwunakligdeuhje.png',
     biography: './services/biography/29.md',
   },
   {

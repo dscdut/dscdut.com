@@ -12,7 +12,7 @@ function NavGroup({ isNavOpen }) {
   return (
     <div className={isNavOpen ? styles.nav_group : styles.nav_group__invisible}>
       {navItems.map((item) => (
-        (width < 1024 || item.icon !== 'home')
+        (width <= 1024 || item.icon !== 'home')
         && (
           <NavItem
             key={item.icon}
