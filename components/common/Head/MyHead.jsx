@@ -43,6 +43,8 @@ const MyHead = ({ title, pathName }) => (
     <meta name="twitter:card" content="summary" key="twcard" />
     <meta name="twitter:description" content={MY_SEO.description} key="twdesc" />
     <meta name="twitter:image" content={MY_SEO.image} key="twimage" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSRT8HLGLG" />
+    <script src="/js/analytics.js" />
   </Head>
 );
 
