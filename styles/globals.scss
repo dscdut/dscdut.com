@@ -25,6 +25,7 @@
 	--color-blue: #4285F4;
 	--color-yellow: #FBBC05;
 	--color-green: #34A853;
+	--color-black: #000000;
 }
 body {
 	padding: 0;
@@ -78,6 +79,7 @@ span {
 }
 a {
 	text-decoration: none;
+	color: var(--color-black);
 }
 button {
 	border: none;

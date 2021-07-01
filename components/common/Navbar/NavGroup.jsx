@@ -20,6 +20,7 @@ function NavGroup({ isNavOpen }) {
             icon={item.icon}
             tooltip={item.tooltip}
             link={item.link}
+            isExternalLink={item.isExternalLink}
           />
         )))}
     </div>

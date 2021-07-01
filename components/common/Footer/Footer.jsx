@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Input } from 'antd';
 import { FacebookFilled, MailFilled, PhoneFilled } from '@ant-design/icons';
 import MyButton from '../Button/MyButton';
@@ -15,19 +16,19 @@ export default function Footer() {
           <div className={styles.info}>
             <p>
               <PhoneFilled className={styles.icon} style={{ color: '#0f9d58' }} />
-              (+84) 773 288 148
+              <a className={styles.contact_link} href="tel:+84773288148">(+84) 773 288 148</a>
             </p>
           </div>
           <div className={styles.info}>
             <p>
               <MailFilled className={styles.icon} style={{ color: '#FF3333' }} />
-              dsc.dut@gmail.com
+              <a className={styles.contact_link} href="mailto:dsc.dut@gmail.com">dsc.dut@gmail.com</a>
             </p>
           </div>
           <div className={styles.info}>
             <p>
               <FacebookFilled className={styles.icon} style={{ color: '#4267B2' }} />
-              facebook.com/dscdut
+              <a className={styles.contact_link} href="https://fb.com/dscdut" target="_blank" rel="noreferrer">facebook.com/dscdut</a>
             </p>
           </div>
         </div>
@@ -43,15 +44,19 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.logo_container}>
-        <Image
-          className={styles.logo}
-          alt="DSC logo"
-          src="/images/dsc_footer.svg"
-          width={500}
-          height={150}
-          layout="intrinsic"
-          quality={100}
-        />
+        <Link href="/">
+          <a href="/">
+            <Image
+              className={styles.logo}
+              alt="DSC logo"
+              src="/images/dsc_footer.svg"
+              width={500}
+              height={150}
+              layout="intrinsic"
+              quality={100}
+            />
+          </a>
+        </Link>
       </div>
     </div>
   );

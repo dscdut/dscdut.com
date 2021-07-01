@@ -9,6 +9,7 @@ const MY_SEO = {
   siteName: 'DSC-DUT',
   image: '/thumbnail.png',
   icon: '/favicon.ico',
+  keywords: 'Developer, Student, Clubs, Developer Student Clubs, Danang, University, Science, Technology, DSC-DUT',
   pngIcon: '/images/dsc_icon.png',
   appleTouchIcon: '/images/dsc_icon_light.png',
   appleMaskIcon: '/images/logo.svg',
@@ -22,6 +23,7 @@ const MyHead = ({ title, pathName }) => (
     <meta name="viewport" content="width=device-width, initial-scale=1" key="viewport" />
     <meta name="description" content={MY_SEO.description} key="desc" />
     <meta name="robots" content="index, follow" key="robots" />
+    <meta name="keywords" content={MY_SEO.keywords} key="keywords" />
     <link rel="shortcut icon" href={MY_SEO.icon} />
     <link rel="icon" type="image/png" sizes="32x32" href={MY_SEO.pngIcon} />
     <link rel="icon" type="image/png" sizes="16x16" href={MY_SEO.pngIcon} />

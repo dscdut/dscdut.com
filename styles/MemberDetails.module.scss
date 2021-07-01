@@ -45,6 +45,11 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+@media only screen and (max-height: 768px) {
+	.container {
+		display: block;
+	}
+}
 @media only screen and (max-width: 1024px) {
 	.container{
 		display: block;
