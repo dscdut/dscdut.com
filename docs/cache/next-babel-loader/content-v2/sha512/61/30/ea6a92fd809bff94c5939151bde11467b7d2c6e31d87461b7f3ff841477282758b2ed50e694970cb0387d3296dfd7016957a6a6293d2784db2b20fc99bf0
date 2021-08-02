@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default async function getMembers() {\n  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/dscdut`);\n  const data = await res.json();\n  const members = data.map(member => ({\n    id: member.id.toString(),\n    avatar: member.avatar,\n    name: member.name\n  }));\n  return members;\n}","map":null,"metadata":{},"sourceType":"module"}

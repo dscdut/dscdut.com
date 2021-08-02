@@ -1,0 +1,9 @@
+{
+  "/404": "pages/404.html",
+  "/": "pages/index.html",
+  "/members/[id]": "pages/members/[id].js",
+  "/members": "pages/members.js",
+  "/ourteam": "pages/ourteam.js",
+  "/products": "pages/products.js",
+  "/_error": "pages/_error.js"
+}

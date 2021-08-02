@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from 'redux';\nimport memberReducer from './memberReducer';\nimport navReducer from './navReducer';\nconst rootReducer = combineReducers({\n  nav: navReducer,\n  member: memberReducer\n});\nexport default rootReducer;","map":null,"metadata":{},"sourceType":"module"}

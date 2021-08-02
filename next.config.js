@@ -6,6 +6,7 @@
 module.exports = {
   // Target must be serverless
   target: 'serverless',
+  distDir: 'docs',
   webpack: function (config) {
     config.module.rules.push({
       test: /\.md$/,
@@ -15,6 +16,8 @@ module.exports = {
   },
   images: {
     domains: ['res.cloudinary.com'],
+    loader: 'imgix',
+    path: '',
   },
   devIndicators: {
     autoPrerender: false,

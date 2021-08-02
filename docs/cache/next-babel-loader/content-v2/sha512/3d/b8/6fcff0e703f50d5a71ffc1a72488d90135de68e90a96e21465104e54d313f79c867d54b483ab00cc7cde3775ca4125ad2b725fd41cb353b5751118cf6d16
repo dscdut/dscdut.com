@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { createStore } from 'redux';\nimport rootReducer from './reducers/index';\nconst store = createStore(rootReducer);\nexport default store;","map":null,"metadata":{},"sourceType":"module"}
