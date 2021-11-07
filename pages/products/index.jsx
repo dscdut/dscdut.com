@@ -47,7 +47,19 @@ const Products = ({ products }) => {
     />
   );
 
-  const renderProduct = products.map((product) => (
+  const renderProduct = products.map((product) => product.type === 'products' && (
+    <motion.div key={product.id} whileHover={hoverMotion}>
+      <Link href={product.link} target="_blank" rel="noreferrer">
+        <a className={styles.group_product} href={product.link} target="_blank" rel="noreferrer">
+          <Card className={styles.card} cover={renderCard(product)}>
+            <Meta className={styles.meta} title={product.name} description={product.description} />
+          </Card>
+        </a>
+      </Link>
+    </motion.div>
+  ));
+
+  const renderSponsor = products.map((product) => product.type === 'sponsors' && (
     <motion.div key={product.id} whileHover={hoverMotion}>
       <Link href={product.link} target="_blank" rel="noreferrer">
         <a className={styles.group_product} href={product.link} target="_blank" rel="noreferrer">
@@ -80,6 +92,10 @@ const Products = ({ products }) => {
           <div className={styles.group_products}>
             {renderProduct}
           </div>
+          <h1 className={styles.group_name}>SPONSORS</h1>
+          <div className={styles.group_products}>
+            {renderSponsor}
+          </div>
         </div>
       </div>
     </PageLayout>
@@ -93,6 +109,7 @@ Products.propTypes = {
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
   })).isRequired,
 };
 

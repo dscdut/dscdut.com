@@ -11,7 +11,7 @@ const My404 = () => {
 
   return (
     <div className={styles.single}>
-      <MyHead title="DSC-DUT | 404 Error" pathName={router.asPath} />
+      <MyHead title="GDSC-DUT | 404 Error" pathName={router.asPath} />
       <Image src="/images/dsc_404.png" width={360} height={210} layout="intrinsic" quality={100} />
       <h1 className={styles.code}>404</h1>
       <h2 className={styles.message}>Page not found</h2>

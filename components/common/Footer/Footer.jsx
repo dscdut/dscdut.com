@@ -28,7 +28,7 @@ export default function Footer() {
           <div className={styles.info}>
             <p>
               <FacebookFilled className={styles.icon} style={{ color: '#4267B2' }} />
-              <a className={styles.contact_link} href="https://fb.com/dscdut" target="_blank" rel="noreferrer">facebook.com/dscdut</a>
+              <a className={styles.contact_link} href="https://fb.com/gdscdut" target="_blank" rel="noreferrer">facebook.com/dscdut</a>
             </p>
           </div>
         </div>

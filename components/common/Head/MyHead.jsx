@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 
 const MY_SEO = {
-  description: 'Official website of Developer Student Clubs - Danang University of Science and Technology.',
+  description: 'Official website of Google Developer Student Clubs - Danang University of Science and Technology.',
   type: 'website',
   url: 'https://dscwebsite.vercel.app',
-  siteName: 'DSC-DUT',
+  siteName: 'GDSC-DUT',
   image: '/thumbnail.png',
   icon: '/favicon.ico',
-  keywords: 'Developer, Student, Clubs, Developer Student Clubs, Danang, University, Science, Technology, DSC-DUT',
+  keywords: 'Google, Developer, Student, Clubs, Developer Student Clubs, Danang, University, Science, Technology, DSC-DUT',
   pngIcon: '/images/dsc_icon.png',
   appleTouchIcon: '/images/dsc_icon_light.png',
   appleMaskIcon: '/images/logo.svg',

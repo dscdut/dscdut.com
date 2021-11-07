@@ -29,7 +29,7 @@ const Members = ({ members }) => {
 
   return (
     <div className={styles.single}>
-      <MyHead title="Our Members" pathName={router.asPath} />
+      <MyHead title="GDSC-DUT | Our Members" pathName={router.asPath} />
       <MembersBackground />
       <div className={styles.title}>
         <MyHeader />

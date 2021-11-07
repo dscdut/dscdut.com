@@ -31,7 +31,7 @@ const navItems = [
     color: 'var(--color-blue)',
     icon: 'facebook',
     tooltip: 'Our facebook page',
-    link: 'https://fb.com/dscdut',
+    link: 'https://fb.com/gdscdut',
     isExternalLink: true,
   },
 ];

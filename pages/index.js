@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <MyHead title="DSC-DUT | Home" pathName={router.asPath} />
+        <MyHead title="GDSC-DUT | Home" pathName={router.asPath} />
         <HomeBackground />
         <div className={styles.background}>
           <Splide className={styles.wrapper} options={options} ref={coverRef}>

@@ -22,7 +22,7 @@ function MyHeader(props) {
       <Link href="/">
         <a href="/">
           <button type="button" className={`${styles.circle} ${router.pathname === '/' || (width <= 1024 && width > 600) ? 'disabled-link' : 'link'}`} onClick={handleToggleNavigation}>
-            <Image className={styles.logo} src="/images/dsc_logo.png" alt="DSC logo" layout="intrinsic" width={55} height={35} />
+            <Image className={styles.logo} src="https://res.cloudinary.com/dz5pvwzm5/image/upload/v1636278416/dsc_images/public/vkqopjogegulvsn281xv.png" alt="DSC logo" layout="intrinsic" width={55} height={35} />
           </button>
         </a>
       </Link>

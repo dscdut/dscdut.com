@@ -80,7 +80,7 @@ const OurTeam = ({ team }) => {
   ));
 
   return (
-    <PageLayout headTitle="DSC-DUT | Our team" hasFooter>
+    <PageLayout headTitle="GDSC-DUT | Our team" hasFooter>
       <div className={styles.cover}>
         <Image
           className={styles.coverImg}
